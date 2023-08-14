@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'Kontakt'|trans }}
+{% endblock %}
+    {% block stylesheets %}
+        {% include 'navbar.html.twig' %}
+
+        <link
+                href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+                rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+                crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    {% endblock %}
+
+{% block body %}
+
+
+    <div class="container text-center">
+    <div class="row align-items-end">
+        <h1>{{ 'Kontakt'|trans }}</h1>
+        <div class="col">
+            <div class="supermain">
+
+                <p>adres mailowy</p>
+                <p>tutaj numer telefonu</p>
+                <p>pracujemy od poniedziałku do piątku, w godzinach od 9 do 16</p>
+                <p>a tutaj adres odziału centralnego</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d163976.4838357467!2d19.69307595732998!3d50.04634802156544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471644c0354e18d1%3A0xb46bb6b576478abf!2zS3Jha8Ozdw!5e0!3m2!1spl!2spl!4v1690638780584!5m2!1spl!2spl" width="800" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+    </div>
+    </div>
+    {%  include 'footer.html.twig' %}
+{% endblock %}

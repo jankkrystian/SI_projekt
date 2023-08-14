@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'Home'|trans }}
+{% endblock %}
+    {% block stylesheets %}
+        {% include 'navbar.html.twig' %}
+        <link
+                href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+                rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+                crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    {% endblock %}
+
+{% block body %}
+
+    <div class="supermain">
+    <div class="main">
+
+        <p> CÓŻ TO ZA STRONA JEST ONA?
+            <br/>
+            <br/>
+
+            A paragraph of placeholder text. We're using it here to show the use of the clearfix class. We're adding quite a few meaningless phrases here to demonstrate how the columns interact here with the floated image.
+
+            As you can see the paragraphs gracefully wrap around the floated image. Now imagine how this would look with some actual content in here, rather than just this boring placeholder text that goes on and on, but actually conveys no tangible information at. It simply takes up space and should not really be read.
+
+            And yet, here you are, still persevering in reading this placeholder text, hoping for some more insights, or some hidden easter egg of content. A joke, perhaps. Unfortunately, there's none of that here.
+            <br/>
+            <br/>
+            <br/>
+            ten kot? prosimy nie zwracać na niego uwagi, po prostu bardzo lubi czytać   ---------------------->
+        </p>
+
+        <img src="salem-saberhagen-salem-the-cat.gif" class="sabrinacat" alt="tutaj był gif kotka">
+    </div>
+
+    <p class="niewiem">A DO ZAOFEROWANIA MAMY:</p>
+    <div class="secondmain">
+
+
+            <div class="one">
+                <img src="moomin-moominpapa.gif">
+                <p>tradycyjne książki</p>
+            </div>
+            <div class="two">
+                <img src="ezgif.com-resize(1).gif">
+                <p>nerdowskie komiksy</p>
+            </div>
+            <div class="three">
+                <img src="ezgif.com-resize(2).gif">
+                <p>oraz audiobooki!</p>
+            </div>
+        </div>
+
+    <div class="languages">
+        <p class="languagesp">W naszej ofercie posiadamy ebooki oraz audiobooki, które pomogą Ci w nauce języków obcych. Probowałxś kiedyś czytać dzieła Edgara Allana Poe albo Shakespeara, ale w oryginale? Nie? Wspaniale, ponieważ jest do tego idealna okazja!
+        Posiadamy materiały zarówno z wbudowanym słownikiem niektórych zagadnień, ale także pełen oryginał dla co bardziej zaawansowanych. Angielski, niemiecki, francuski, japoński, szwedzki, arabski - wszystkie te jezyki w zasięgu ręki! (oraz oka, jakby nie patrzeć hehe)
+    </div>
+    </div>
+
+
+    {%  include 'footer.html.twig' %}
+{% endblock %}

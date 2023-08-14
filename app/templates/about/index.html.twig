@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'Kontakt'|trans }}
+{% endblock %}
+    {% block stylesheets %}
+        {% include 'navbar.html.twig' %}
+
+        <link
+                href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+                rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+                crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    {% endblock %}
+
+{% block body %}
+
+
+    <div class="container text-center">
+    <div class="row align-items-end">
+        <h1>{{ 'O nas'|trans }}</h1>
+        <div class="col">
+            <p>O nas</p>
+
+            <p><IBUK.pl to jedna z największych wypożyczalni oraz księgarni Internetowych z ebookami i audiobookami w Polsce. W naszej ofercie znajdziesz kilkadziesiąt tysięcy tytułów naukowych, akademickich i profesjonalnych oraz beletrystyki. Oprócz ebooków i audiobooków po polsku, oferujemy tysiące tytułów po angielsku. Ebooki można kupić lub wypożyczać zarówno pojedynczo jak i w abonamentach. Tytuły w ofercie do pobrania dostępne są w formatach epub, mobi, pdf oraz mp3. Wypożyczone ebooki możemy czytać online przez aplikację myIBUK. Używamy zabezpieczenia Watermark.</p>
+
+                     <p>Właścicielem serwisu internetowego IBUK.pl jest Wydawnictwo Naukowe PWN Spółka Akcyjna z siedzibą w Warszawie, ul. Gottlieba Daimlera 2, 02-460 Warszawa, zarejestrowana w Rejestrze Przedsiębiorców prowadzonym przez Sąd Rejonowy dla m. st. Warszawy, XIV Wydział Gospodarczy Krajowego Rejestru Sądowego pod nr KRS 0000067444, NIP: 526-01-52-235 o kapitale zakładowym 4.250.606 zł, numer telefonu: (42) 680-44-94, adres poczty elektronicznej: pomoc@ibuk.pl.</p>
+
+            <p>Korzystanie ze Sklepu wymaga spełnienia przez urządzenie końcowe i system teleinformatyczny, z którego korzysta Klient, minimalnych Wymagań Technicznych, określonych w Regulaminie serwisu. Akceptacja Regulaminu jest dobrowolna, ale konieczna w celu utworzeniu konta Klienta i korzystania z serwisu IBUK.pl. Kompletne informacje na temat świadczenia bezpłatnych usług znajdują się w regulaminie serwisu.</p>
+
+            <p>Operatorem sprzedaży w serwisie IBUK.pl jest ePWN sp. z o.o. z siedzibą w Warszawie, ul. Gottlieba Daimlera 2, 02-460 Warszawa, zarejestrowana w Rejestrze Przedsiębiorców prowadzonym przez Sąd Rejonowy dla m. st. Warszawy, XIV Wydział Gospodarczy Krajowego Rejestru Sądowego pod nr KRS 0000442101, NIP: 525-25-43-576 o kapitale zakładowym 12.000.000 zł. Informacje na temat sklepu oraz zawarcia i wykonanie umowy o dostarczenie treści cyfrowych znajdują się w Regulaminie Sklepu.</p>
+
+
+
+            </p>
+        </div>
+    </div>
+    {%  include 'footer.html.twig' %}
+{% endblock %}
