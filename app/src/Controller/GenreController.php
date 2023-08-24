@@ -6,6 +6,7 @@
 namespace App\Controller;
 
 use App\Entity\Genre;
+use App\Repository\GenreRepository;
 use App\Service\GenreService;
 use App\Form\Type\GenreType;
 use App\Service\GenreServiceInterface;
@@ -74,9 +75,12 @@ class GenreController extends AbstractController
         requirements: ['id' => '[1-9]\d*'],
         methods: 'GET'
     )]
-    public function show(Genre $genre): Response
+    public function show(Genre $genre, int $id): Response
     {
-        return $this->render('genre/show.html.twig', ['genre' => $genre]);
+        $genre = $repository->findOneById($id);
+        return $this->render(
+            'genre/show.html.twig',
+            ['genre' => $genre]);
     }
 
     /**
@@ -102,7 +106,7 @@ class GenreController extends AbstractController
 
             $this->addFlash(
                 'success',
-                      $this->translator->trans('a kiedy chodziłem do podstawówki to był tam taki Paweł i potem na lody do Biedronki, tak, już na lody do Biedronki')
+                      $this->translator->trans('message.added_success')
             );
 
             return $this->redirectToRoute('genre_index');
@@ -112,8 +116,10 @@ class GenreController extends AbstractController
             'genre/create.html.twig',
             ['form' => $form->createView()]
         );
+
     }
 
+    // ...
     /**
      * Edit action.
      *
@@ -140,7 +146,7 @@ class GenreController extends AbstractController
 
             $this->addFlash(
                 'success',
-                $this->translator->trans('message.created_successfully')
+                $this->translator->trans('message.added_success')
             );
 
             return $this->redirectToRoute('genre_index');
@@ -155,40 +161,4 @@ class GenreController extends AbstractController
         );
     }
 
-    /**
-     * Delete action.
-     *
-     * @param Request  $request  HTTP request
-     * @param Genre $genre Genre entity
-     *
-     * @return Response HTTP response
-     */
-    #[Route('/{id}/delete', name: 'genre_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
-    public function delete(Request $request, Genre $genre): Response
-    {
-        $form = $this->createForm(FormType::class, $genre, [
-            'method' => 'DELETE',
-            'action' => $this->generateUrl('genre_delete', ['id' => $genre->getId()]),
-        ]);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->genreService->delete($genre);
-
-            $this->addFlash(
-                'success',
-                $this->translator->trans('message.deleted_successfully')
-            );
-
-            return $this->redirectToRoute('genre_index');
-        }
-
-        return $this->render(
-            'genre/delete.html.twig',
-            [
-                'form' => $form->createView(),
-                'genre' => $genre,
-            ]
-        );
-    }
 }

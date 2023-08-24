@@ -13,3 +13,7 @@ contact_index:
 about_index:
   path: /about
   controller: App\Controller\AboutController::about_index
+
+translacje_index:
+  path: /translacje
+  controller: App\Controller\TranslacjeController::translacje_index

@@ -4,7 +4,7 @@
     <body>
       <trans-unit id="label.actions">
         <source>label.actions</source>
-        <target>Actions</target>
+        <target>Show</target>
       </trans-unit>
       <trans-unit id="label.id">
         <source>label.id</source>
@@ -37,6 +37,10 @@
       <trans-unit id="title.record_view">
         <source>title.record_view</source>
         <target>Record view #%id%</target>
+      </trans-unit>
+      <trans-unit id="message.added_success">
+      <source>message.added_success</source>
+      <target>Good job, added successfully!</target>
       </trans-unit>
     </body>
   </file>

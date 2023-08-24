@@ -22,4 +22,11 @@ interface BookServiceInterface
      */
     public function getPaginatedList(int $page): PaginationInterface;
 
+    /**
+     * Save entity.
+     *
+     * @param Book $book Book entity
+     */
+    public function save(Book $book): void;
+
 }

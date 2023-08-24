@@ -78,14 +78,4 @@ class GenreRepository extends ServiceEntityRepository
         return $queryBuilder ?? $this->createQueryBuilder('genre');
     }
 
-    /**
-     * Delete entity.
-     *
-     * @param Genre $genre Genre entity
-     */
-    public function delete(Genre $genre): void
-    {
-        $this->_em->remove($genre);
-        $this->_em->flush();
-    }
 }

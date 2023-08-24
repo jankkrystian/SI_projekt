@@ -1,6 +1,6 @@
 <?php
 /**
- * Category type.
+ * Genre type.
  */
 
 namespace App\Form\Type;

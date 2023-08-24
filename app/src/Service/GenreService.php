@@ -11,6 +11,7 @@ use App\Repository\GenreRepository;
 use App\Repository\BookRepository;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
+use phpDocumentor\Reflection\Types\String_;
 
 /**
  * Class GenreService.
@@ -63,4 +64,18 @@ class GenreService implements GenreServiceInterface
     {
         $this->genreRepository->save($genre);
     }
+    /**
+     * Find by id.
+     *
+     * @param int $id Category id
+     *
+     * @return Genre|null Category entity
+     *
+     * @throws NonUniqueResultException
+     */
+    public function findOneById(int $id): ?Genre
+    {
+        return $this->genreRepository->findOneById($id);
+    }
+
 }

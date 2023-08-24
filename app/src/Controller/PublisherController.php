@@ -102,7 +102,7 @@ class PublisherController extends AbstractController
 
             $this->addFlash(
                 'success',
-                $this->translator->trans('message.created_successfully')
+                $this->translator->trans('message.added_success')
             );
 
             return $this->redirectToRoute('publisher_index');

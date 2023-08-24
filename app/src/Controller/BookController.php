@@ -6,6 +6,7 @@
 namespace App\Controller;
 
 use App\Entity\Book;
+use App\Form\Type\BookType;
 use App\Service\BookService;
 use App\Service\BookServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -65,5 +66,35 @@ class BookController extends AbstractController
     public function show(Book $book): Response
     {
         return $this->render('book/show.html.twig', ['book' => $book]);
+    }
+
+    /**
+     * Create action.
+     *
+     * @param Request $request HTTP request
+     *
+     * @return Response HTTP response
+     */
+    #[Route(
+        '/create',
+        name: 'book_create',
+        methods: 'GET|POST',
+    )]
+    public function create(Request $request): Response
+    {
+        $book = new Book();
+        $form = $this->createForm(BookType::class, $book);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->bookService->save($book);
+
+            return $this->redirectToRoute('book_index');
+        }
+
+        return $this->render(
+            'book/create.html.twig',
+            ['form' => $form->createView()]
+        );
     }
 }

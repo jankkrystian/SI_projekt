@@ -47,6 +47,7 @@
                 <th>{{ knp_pagination_sortable(pagination, 'Name'|trans, 'publisher.title') }}</th>
 
                 <th>{{ 'label.actions'|trans }}</th>
+                <th>{{ 'Create'|trans }}</th>
             </tr>
             </thead>
             <tbody>
@@ -59,6 +60,11 @@
                     <td>
                         <a href="{{ url('publisher_show', {id: publisher.id}) }}" title="{{ 'action.show'|trans }}">
                             {{ 'action.show'|trans }}
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ url('publisher_create', {id: publisher.id}) }}" title="{{ 'action.create'|trans }}">
+                            {{ 'action.create'|trans }}
                         </a>
                     </td>
                 </tr>

@@ -9,10 +9,12 @@ use App\Entity\Creator;
 use App\Form\Type\CreatorType;
 use App\Service\CreatorService;
 use App\Service\CreatorServiceInterface;
+use App\Service\GenreServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * Class CreatorController.
@@ -26,11 +28,24 @@ class CreatorController extends AbstractController
     private CreatorServiceInterface $creatorService;
 
     /**
+     * Translator.
+     *
+     * @var TranslatorInterface
+     */
+    private TranslatorInterface $translator;
+    /**
+     * Constructor.
+     * @param CreatorServiceInterface $creatorService Creator service
+     * @param TranslatorInterface      $translator  Translator
+     */
+
+    /**
      * Constructor.
      */
-    public function __construct(CreatorServiceInterface $taskService)
+    public function __construct(CreatorServiceInterface $taskService, TranslatorInterface $translator)
     {
         $this->creatorService = $taskService;
+        $this->translator = $translator;
     }
 
     /**
@@ -88,6 +103,11 @@ class CreatorController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->creatorService->save($creator);
+
+            $this->addFlash(
+                'success',
+                $this->translator->trans('message.added_success')
+            );
 
             return $this->redirectToRoute('creator_index');
         }

@@ -68,4 +68,15 @@ class BookRepository extends ServiceEntityRepository
     {
         return $queryBuilder ?? $this->createQueryBuilder('book');
     }
+    // ...
+    /**
+     * Save entity.
+     *
+     * @param Book $book Book entity
+     */
+    public function save(Book $book): void
+    {
+        $this->_em->persist($book);
+        $this->_em->flush();
+    }
 }
