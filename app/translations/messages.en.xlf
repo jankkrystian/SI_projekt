@@ -2,6 +2,10 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="file.ext">
     <body>
+      <trans-unit id="welcome.site">
+      <source>welcome.site</source>
+      <target>WHAT KIND OF SITE IS IT?</target>
+      </trans-unit>
       <trans-unit id="label.actions">
         <source>label.actions</source>
         <target>Show</target>
@@ -41,6 +45,12 @@
       <trans-unit id="message.added_success">
       <source>message.added_success</source>
       <target>Good job, added successfully!</target>
+      </trans-unit>
+      <trans-unit id="language.text">
+      <source>language.text</source>
+      <target>W naszej ofercie posiadamy ebooki oraz audiobooki, które pomogą Ci w nauce języków obcych. Probowałxś kiedyś czytać dzieła Edgara Allana Poe albo Shakespeara, ale w oryginale? Nie? Wspaniale, ponieważ jest do tego idealna okazja!
+                      Posiadamy materiały zarówno z wbudowanym słownikiem niektórych zagadnień, ale także pełen oryginał dla co bardziej zaawansowanych. Angielski, niemiecki, francuski, japoński, szwedzki, arabski - wszystkie te jezyki w zasięgu ręki! (oraz oka, jakby nie patrzeć hehe)
+      </target>
       </trans-unit>
     </body>
   </file>

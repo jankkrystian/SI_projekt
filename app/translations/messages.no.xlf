@@ -3,10 +3,26 @@
   <file source-language="de" datatype="plaintext" original="file.ext">
     <body>
 
-        <trans-unit id="welcome.text">
-        <source>welcome.text</source>
-        <target>God dag, hvordan har du det?</target>
+        <trans-unit id="welcome.site">
+        <source>welcome.site</source>
+        <target>denne katten? ikke bry deg om ham, han liker bare å lese ------- > </target>
         </trans-unit>
+        <trans-unit id="language.text">
+                <source>language.text</source>
+                <target>da jeg gikk på barneskolen var det denne fyren Paweł og da jeg kom tilbake fra ham dro vi til Biedronka for iskrem, ja, allerede for iskrem</target>
+                </trans-unit>
+        <trans-unit id="books">
+        <source>books</source>
+        <target>tradisjonelle bøker</target>
+        </trans-unit>
+          <trans-unit id="comics">
+           <source>comics</source>
+           <target>nerdete tegneserier</target>
+            </trans-unit>
+             <trans-unit id="audiobooks">
+                        <source>audiobooks</source>
+                        <target>og lydbøker!</target>
+                        </trans-unit>
         </body>
       </file>
     </xliff>

@@ -6,12 +6,13 @@
 namespace App\Service;
 
 use App\Entity\Genre;
+use App\Repository\RecordRepository;
 use App\Service\GenreServiceInterface;
 use App\Repository\GenreRepository;
 use App\Repository\BookRepository;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
-use phpDocumentor\Reflection\Types\String_;
+
 
 /**
  * Class GenreService.
@@ -29,14 +30,21 @@ class GenreService implements GenreServiceInterface
     private PaginatorInterface $paginator;
 
     /**
+     * Book repository
+     */
+    private BookRepository $bookRepository;
+
+    /**
      * Constructor.
      *
      * @param GenreRepository     $genreRepository Genre repository
+     * @param BookRepository     $bookRepository Book repository
      * @param PaginatorInterface $paginator      Paginator
      */
-    public function __construct(GenreRepository $genreRepository, PaginatorInterface $paginator)
+    public function __construct(GenreRepository $genreRepository, BookRepository $bookRepository, PaginatorInterface $paginator)
     {
         $this->genreRepository = $genreRepository;
+        $this->bookRepository = $bookRepository;
         $this->paginator = $paginator;
     }
 
@@ -63,6 +71,11 @@ class GenreService implements GenreServiceInterface
     public function save(Genre $genre): void
     {
         $this->genreRepository->save($genre);
+    }
+
+    public function delete(Genre $genre): void
+    {
+        $this->genreRepository->delete($genre);
     }
     /**
      * Find by id.
