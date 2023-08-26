@@ -7,7 +7,7 @@ namespace App\Controller;
 
 use App\Entity\Genre;
 use App\Form\Type\GenreType;
-use App\Service\GenreServiceInterface;
+use App\Interface\GenreServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;

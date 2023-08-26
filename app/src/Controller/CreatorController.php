@@ -7,9 +7,7 @@ namespace App\Controller;
 
 use App\Entity\Creator;
 use App\Form\Type\CreatorType;
-use App\Service\CreatorService;
 use App\Service\CreatorServiceInterface;
-use App\Service\GenreServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

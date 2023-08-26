@@ -46,11 +46,45 @@
       <source>message.added_success</source>
       <target>Good job, added successfully!</target>
       </trans-unit>
+      <trans-unit id="message.deleted_successfully">
+       <source>message.deleted_successfully</source>
+      <target>Good job, deleted successfully!</target>
+      </trans-unit>
+      <trans-unit id="action.back_to_list">
+        <source>action.back_to_list</source>
+        <target>I want to go back</target>
+      </trans-unit>
+      <trans-unit id="action.save">
+        <source>action.save</source>
+        <target>I want to save it!</target>
+      </trans-unit>
+      <trans-unit id="action.edit">
+        <source>action.edit</source>
+        <target>Yes, I want to edit it!</target>
+      </trans-unit>
+      <trans-unit id="action.delete">
+        <source>action.delete</source>
+        <target>Yes, I'm positive I want to delete it, no regrets!</target>
+      </trans-unit>
+      <trans-unit id="title.genre_details">
+        <source>title.genre_details</source>
+        <target>Some details</target>
+      </trans-unit>
+      <trans-unit id="title.genre_create">
+        <source>title.genre_create</source>
+        <target>Create!</target>
+      </trans-unit>
+      <trans-unit id="title.genre_edit">
+              <source>title.genre_edit</source>
+              <target>Edit!</target>
+            </trans-unit>
+      <trans-unit id="title.genre_delete">
+        <source>title.genre_delete</source>
+        <target>Delete!</target>
+      </trans-unit>
       <trans-unit id="language.text">
-      <source>language.text</source>
-      <target>W naszej ofercie posiadamy ebooki oraz audiobooki, które pomogą Ci w nauce języków obcych. Probowałxś kiedyś czytać dzieła Edgara Allana Poe albo Shakespeara, ale w oryginale? Nie? Wspaniale, ponieważ jest do tego idealna okazja!
-                      Posiadamy materiały zarówno z wbudowanym słownikiem niektórych zagadnień, ale także pełen oryginał dla co bardziej zaawansowanych. Angielski, niemiecki, francuski, japoński, szwedzki, arabski - wszystkie te jezyki w zasięgu ręki! (oraz oka, jakby nie patrzeć hehe)
-      </target>
+        <source>language.text</source>
+        <target>some funny description in English</target>
       </trans-unit>
     </body>
   </file>

@@ -6,10 +6,10 @@
 namespace App\Service;
 
 use App\Entity\Genre;
-use App\Repository\RecordRepository;
-use App\Service\GenreServiceInterface;
-use App\Repository\GenreRepository;
+use App\Interface\GenreServiceInterface;
 use App\Repository\BookRepository;
+use App\Repository\GenreRepository;
+use Doctrine\ORM\QueryBuilder;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
@@ -77,18 +77,6 @@ class GenreService implements GenreServiceInterface
     {
         $this->genreRepository->delete($genre);
     }
-    /**
-     * Find by id.
-     *
-     * @param int $id Category id
-     *
-     * @return Genre|null Category entity
-     *
-     * @throws NonUniqueResultException
-     */
-    public function findOneById(int $id): ?Genre
-    {
-        return $this->genreRepository->findOneById($id);
-    }
+
 
 }
