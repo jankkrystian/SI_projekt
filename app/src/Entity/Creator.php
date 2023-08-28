@@ -7,6 +7,7 @@ namespace App\Entity;
 
 use App\Repository\CreatorRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
@@ -55,6 +56,14 @@ class Creator
      */
     #[ORM\Column(type: 'string', length: 255)]
     private ?string $surname;
+
+    /**
+     * Slug.
+     * @var string|null
+     */
+    #[ORM\Column(type: 'string', length: 255)]
+    #[Gedmo\Slug(fields: ['nick'])]
+    private ?string $slug = null;
 
     /**
      * Getter for Id.
@@ -125,5 +134,17 @@ class Creator
     public function setSurname(?string $surname): void
     {
         $this->surname = $surname;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): static
+    {
+        $this->slug = $slug;
+
+        return $this;
     }
 }

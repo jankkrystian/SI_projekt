@@ -7,6 +7,7 @@ namespace App\Entity;
 
 use App\Repository\PublisherRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
@@ -33,6 +34,14 @@ class Publisher
      */
     #[ORM\Column(type: 'string', length: 255)]
     private ?string $title;
+
+    /**
+     * Slug.
+     * @var string|null
+     */
+    #[ORM\Column(type: 'string', length: 255)]
+    #[Gedmo\Slug(fields: ['title'])]
+    private ?string $slug = null;
 
     /**
      * Getter for Id.
@@ -62,5 +71,17 @@ class Publisher
     public function setTitle(?string $title): void
     {
         $this->title = $title;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): static
+    {
+        $this->slug = $slug;
+
+        return $this;
     }
 }
