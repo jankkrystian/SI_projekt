@@ -72,10 +72,10 @@ class BookType extends AbstractType
                 EntityType::class,
                 ['class'=>Creator::class,
                     'choice _label'=>function ($creator): string {
-                        return $creator->getPublisherTitle();
+                        return $creator->getCreatorSurname();
                     },
-                    'label'=>'label_creator_title',
-                    'placeholder'=>'label.creator_title',
+                    'label'=>'label_creator_nick',
+                    'placeholder'=>'label.creator_surname',
                     'required'=>true,
 
                 ]

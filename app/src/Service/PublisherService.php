@@ -6,9 +6,8 @@
 namespace App\Service;
 
 use App\Entity\Publisher;
-use App\Service\PublisherServiceInterface;
+use App\Interface\PublisherServiceInterface;
 use App\Repository\PublisherRepository;
-use App\Repository\BookRepository;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
@@ -62,5 +61,9 @@ class PublisherService implements PublisherServiceInterface
     public function save(Publisher $publisher): void
     {
         $this->publisherRepository->save($publisher);
+    }
+    public function delete(Publisher $publisher): void
+    {
+        $this->publisherRepository->delete($publisher);
     }
 }

@@ -16,10 +16,6 @@
 {% endblock %}
 {% block body %}
 
-    <h4>{{ 'tutaj będzie można przeglądać autorów?'|trans }}</h4>
-    <br/>
-    <br/>
-    <br/>
     {% if pagination is defined and pagination.items|length %}
 
         <div class="container text-center">
@@ -27,11 +23,9 @@
         <div class="row">
 
         <div class="col-sm-3">
-
-            <h3>Neil Gaiman dla uwagi</h3>
             <div class="list-group">
                 <img src="https://www.toon-books.com/uploads/1/2/5/6/12564774/8090704_orig.jpg">
-
+                <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" href="{{ url('creator_create')}}" title="{{'action.create'|trans}}">{{ 'action.create' | trans }}</a>
             </div>
         </div>
         <div class="col-sm-9">
@@ -43,13 +37,14 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>{{ knp_pagination_sortable(pagination, 'Id'|trans, 'creator.id') }}</th>
-                <th>{{ knp_pagination_sortable(pagination, 'Nick'|trans, 'creator.nick') }}</th>
-                <th>{{ knp_pagination_sortable(pagination, 'Name'|trans, 'creator.name') }}</th>
-                <th>{{ knp_pagination_sortable(pagination, 'Surname'|trans, 'creator.surname') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.id'|trans, 'creator.id') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.nick'|trans, 'creator.nick') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.name'|trans, 'creator.name') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.surname'|trans, 'creator.surname') }}</th>
+                <th>{{ 'action.show'|trans }}</th>
+                <th>{{ 'action.edit'|trans }}</th>
+                <th>{{ 'action.delete'|trans }}</th>
 
-                <th>{{ 'label.actions'|trans }}</th>
-                <th>{{ 'label.actions'|trans }}</th>
             </tr>
             </thead>
             <tbody>
@@ -60,16 +55,17 @@
                     <td>{{ creator.name }}</td>
                     <td>{{ creator.surname }}</td>
 
-
                     <td>
-                        <a href="{{ url('creator_show', {id: creator.id}) }}" title="{{ 'action.show'|trans }}">
-                            {{ 'action.show'|trans }}
-                        </a>
+                        <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" href="{{ url('creator_show', {id: creator.id}) }}" title="{{'action.show'|trans}}">{{ 'action.show' | trans }}</a>
                     </td>
                     <td>
-                        <a href="{{ url('creator_create', {id: creator.id}) }}" title="{{ 'action.show'|trans }}">
-                            {{ 'action.show'|trans }}
-                        </a>
+                        <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" href="{{ url('creator_edit', {id: creator.id}) }}" title="{{'action.edit'|trans}}">{{ 'action.edit' | trans }}</a>
+                    </td>
+                    </td>
+                    <td>
+                        <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" href="{{ url('creator_delete', {id: creator.id}) }}" title="{{'action.delete'|trans}}">{{ 'action.delete' | trans }}</a>
+                    </td>
+                    </a>
                     </td>
                 </tr>
             {% endfor %}

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Service;
+namespace App\Interface;
 
 use App\Entity\Publisher;
 use Knp\Component\Pager\Pagination\PaginationInterface;
@@ -22,4 +22,11 @@ interface PublisherServiceInterface
      * @param Publisher $publisher Publisher entity
      */
     public function save(Publisher $publisher): void;
+
+    /**
+     * @param Publisher $publisher Publisher entity
+     *
+     * @return void Result
+     */
+    public function delete(Publisher $publisher): void;
 }

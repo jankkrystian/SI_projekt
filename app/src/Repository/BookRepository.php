@@ -7,6 +7,8 @@ namespace App\Repository;
 
 use App\Entity\Book;
 use App\Entity\Genre;
+use App\Entity\Creator;
+use App\Entity\Publisher;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
@@ -77,6 +79,16 @@ class BookRepository extends ServiceEntityRepository
     public function save(Book $book): void
     {
         $this->_em->persist($book);
+        $this->_em->flush();
+    }
+    /**
+     * Delete entity.
+     *
+     * @param Book $book Book entity
+     */
+    public function delete(Book $book): void
+    {
+        $this->_em->remove($book);
         $this->_em->flush();
     }
 }

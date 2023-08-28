@@ -17,7 +17,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Publisher[]    findAll()
  * @method Publisher[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  *
- * @extends ServiceEntityRepository<Category>
+ * @extends ServiceEntityRepository<Publisher>
  */
 class PublisherRepository extends ServiceEntityRepository
 {
@@ -54,17 +54,6 @@ class PublisherRepository extends ServiceEntityRepository
             ->orderBy('publisher.title', 'DESC');
     }
 
-    /**
-     * Get or create new query builder.
-     *
-     * @param QueryBuilder|null $queryBuilder Query builder
-     *
-     * @return QueryBuilder Query builder
-     */
-    private function getOrCreateQueryBuilder(QueryBuilder $queryBuilder = null): QueryBuilder
-    {
-        return $queryBuilder ?? $this->createQueryBuilder('publisher');
-    }
 
     // ...
     /**
@@ -77,4 +66,26 @@ class PublisherRepository extends ServiceEntityRepository
         $this->_em->persist($publisher);
         $this->_em->flush();
     }
+    /**
+     * Delete entity.
+     *
+     * @param Publisher $publisher Publisher entity
+     */
+    public function delete(Publisher $publisher): void
+    {
+        $this->_em->remove($publisher);
+        $this->_em->flush();
+    }
+    /**
+     * Get or create new query builder.
+     *
+     * @param QueryBuilder|null $queryBuilder Query builder
+     *
+     * @return QueryBuilder Query builder
+     */
+    private function getOrCreateQueryBuilder(QueryBuilder $queryBuilder = null): QueryBuilder
+    {
+        return $queryBuilder ?? $this->createQueryBuilder('publisher');
+    }
+
 }

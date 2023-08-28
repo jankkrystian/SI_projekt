@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.creator_details'|trans({'%id%': creator.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'title.creator_details'|trans({'%id%': creator.id|default('')}) }}</h1>
+    {% if creator is defined and creator|length %}
+        <dl class="dl-horizontal">
+            <dt>{{ 'label.id'|trans }}</dt>
+            <dd>{{ creator.id }}</dd>
+            <dt>{{ 'label.nick'|trans }}</dt>
+            <dd>{{ creator.nick }}</dd>
+            <dt>{{ 'label.name'|trans }}</dt>
+            <dd>{{  creator.name }}</dd>
+            <dt>{{ 'label.surname'|trans }}</dt>
+            <dd>{{ creator.surname }}</dd>
+        </dl>
+        <p>
+            <a href="{{ url('creator_index') }}" title="{{ 'action.back_to_list'|trans }}">
+                {{ 'action.back_to_list'|trans }}
+            </a>
+        </p>
+    {% else %}
+        <p>
+            {{ 'message.record_not_found'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}

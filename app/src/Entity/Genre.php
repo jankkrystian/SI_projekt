@@ -8,6 +8,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: GenreRepository::class)]
 #[ORM\Table(name: 'genres')]
+#[ORM\UniqueConstraint(name: 'uq_genres_title', columns: ['title'])]
+#[UniqueEntity(fields: ['title'])]
 class Genre
 {
     #[ORM\Id]

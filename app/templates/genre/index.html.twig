@@ -16,10 +16,6 @@
 {% endblock %}
 {% block body %}
 
-    <h4>{{ 'tutaj będzie można przeglądać gatunki?'|trans }}</h4>
-    <br/>
-    <br/>
-    <br/>
     {% if pagination is defined and pagination.items|length %}
 
         <div class="container text-center">
@@ -27,10 +23,9 @@
         <div class="row">
 
         <div class="col-sm-3">
-
-            <h3>Neil Gaiman dla uwagi</h3>
             <div class="list-group">
                 <img src="https://www.toon-books.com/uploads/1/2/5/6/12564774/8090704_orig.jpg">
+                <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" href="{{ url('genre_create')}}" title="{{'action.create'|trans}}">{{ 'action.create' | trans }}</a>
 
             </div>
         </div>
@@ -46,10 +41,9 @@
                 <th>{{ knp_pagination_sortable(pagination, 'label.id'|trans, 'genre.id') }}</th>
                 <th>{{ knp_pagination_sortable(pagination, 'label.title'|trans, 'genre.title') }}</th>
 
-                <th>{{ 'label.actions'|trans }}</th>
-                <th>{{ 'Create'|trans }}</th>
-                <th>{{ 'Edit'|trans }}</th>
-                <th>{{ 'Delete'|trans }}</th>
+                <th>{{ 'action.show'|trans }}</th>
+                <th>{{ 'action.edit'|trans }}</th>
+                <th>{{ 'action.delete'|trans }}</th>
             </tr>
             </thead>
             <tbody>
@@ -60,23 +54,15 @@
 
 
                     <td>
-                        <a href="{{ url('genre_show', {id: genre.id}) }}" title="{{ 'action.show'|trans }}">
-                            {{ 'show'|trans }}
-                        </a>
+                        <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" href="{{ url('genre_show', {id: genre.id}) }}" title="{{'action.show'|trans}}">{{ 'action.show' | trans }}</a>
                     </td>
                     <td>
-                        <a href="{{ url('genre_create', {id: genre.id}) }}" title="{{ 'action.show'|trans }}">
-                            {{ 'create'|trans }}
-                        </a>
+                        <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" href="{{ url('genre_edit', {id: genre.id}) }}" title="{{'action.edit'|trans}}">{{ 'action.edit' | trans }}</a>
+                    </td>
                     </td>
                     <td>
-                        <a href="{{ url('genre_edit', {id: genre.id}) }}" title="{{ 'action.show'|trans }}">
-                            {{ 'edit'|trans }}
-                        </a>
+                        <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" href="{{ url('genre_delete', {id: genre.id}) }}" title="{{'action.delete'|trans}}">{{ 'action.delete' | trans }}</a>
                     </td>
-                    <td>
-                        <a href="{{ url('genre_delete', {id: genre.id}) }}" title="{{ 'action.show'|trans }}">
-                            {{ 'delete'|trans }}
                         </a>
                     </td>
                 </tr>

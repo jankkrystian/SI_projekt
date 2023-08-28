@@ -22,7 +22,7 @@ class CreatorFixtures extends AbstractBaseFixtures
      */
     public function loadData(): void
     {
-        $this->createMany(20, 'creators', function (int $i) {
+        $this->createMany(3, 'creators', function (int $i) {
             $creator = new Creator();
             $creator->setNick($this->faker->unique()->word);
             $creator->setName($this->faker->sentence);

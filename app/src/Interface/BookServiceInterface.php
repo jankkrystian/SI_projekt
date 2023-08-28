@@ -3,7 +3,7 @@
  * Book service interface.
  */
 
-namespace App\Service;
+namespace App\Interface;
 
 use App\Entity\Book;
 use Knp\Component\Pager\Pagination\PaginationInterface;
@@ -28,5 +28,12 @@ interface BookServiceInterface
      * @param Book $book Book entity
      */
     public function save(Book $book): void;
+
+    /**
+     * @param Book $book Book entity
+     *
+     * @return void Result
+     */
+    public function delete(Book $book): void;
 
 }

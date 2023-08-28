@@ -26,6 +26,30 @@
         <source>label.tags</source>
         <target>Tags</target>
       </trans-unit>
+      <trans-unit id="label.nick">
+        <source>label.nick</source>
+        <target>Nick</target>
+      </trans-unit>
+      <trans-unit id="label.name">
+        <source>label.name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="label.surname">
+        <source>label.surname</source>
+        <target>Surname</target>
+      </trans-unit>
+      <trans-unit id="label.genre.title">
+        <source>label.genre.title</source>
+        <target>Title</target>
+      </trans-unit>
+      <trans-unit id="label.publisher.title">
+        <source>label.publisher.title</source>
+        <target>Publisher</target>
+      </trans-unit>
+      <trans-unit id="label.creator.surname">
+        <source>label.creator.surname</source>
+        <target>Author</target>
+      </trans-unit>
       <trans-unit id="message.empty_list">
         <source>message.empty_list</source>
         <target>List is empty.</target>
@@ -54,9 +78,17 @@
         <source>action.back_to_list</source>
         <target>I want to go back</target>
       </trans-unit>
+      <trans-unit id="action.show">
+        <source>action.show</source>
+        <target>Show</target>
+      </trans-unit>
       <trans-unit id="action.save">
         <source>action.save</source>
         <target>I want to save it!</target>
+      </trans-unit>
+      <trans-unit id="action.create">
+        <source>action.create</source>
+        <target>Create!</target>
       </trans-unit>
       <trans-unit id="action.edit">
         <source>action.edit</source>
@@ -64,24 +96,56 @@
       </trans-unit>
       <trans-unit id="action.delete">
         <source>action.delete</source>
-        <target>Yes, I'm positive I want to delete it, no regrets!</target>
+        <target>Yes, delete it, no regrets!</target>
       </trans-unit>
       <trans-unit id="title.genre_details">
         <source>title.genre_details</source>
-        <target>Some details</target>
+        <target>Some details about the genre</target>
       </trans-unit>
       <trans-unit id="title.genre_create">
         <source>title.genre_create</source>
-        <target>Create!</target>
+        <target>Create a new genre!</target>
       </trans-unit>
       <trans-unit id="title.genre_edit">
               <source>title.genre_edit</source>
-              <target>Edit!</target>
+              <target>Edit the genre!</target>
             </trans-unit>
       <trans-unit id="title.genre_delete">
         <source>title.genre_delete</source>
-        <target>Delete!</target>
+        <target>Delete the genre!</target>
       </trans-unit>
+      <trans-unit id="title.publisher_details">
+              <source>title.publisher_details</source>
+              <target>Some details about the publisher</target>
+            </trans-unit>
+            <trans-unit id="title.publisher_create">
+              <source>title.publisher_create</source>
+              <target>Create a new publisher!</target>
+            </trans-unit>
+            <trans-unit id="title.publisher_edit">
+                <source>title.publisher_edit</source>
+                <target>Edit the publisher!</target>
+            </trans-unit>
+            <trans-unit id="title.publisher_delete">
+              <source>title.publisher_delete</source>
+              <target>Delete the publisher!</target>
+            </trans-unit>
+            <trans-unit id="title.creator_details">
+                <source>title.creator_details</source>
+                <target>Some details about the creator</target>
+            </trans-unit>
+            <trans-unit id="nick.creator_create">
+                <source>nick.creator_create</source>
+                <target>Create a new creator!</target>
+            </trans-unit>
+            <trans-unit id="title.creator_edit">
+                <source>title.creator_edit</source>
+                <target>Edit the creator!</target>
+            </trans-unit>
+            <trans-unit id="title.creator_delete">
+                <source>title.creator_delete</source>
+                <target>Delete the creator!</target>
+            </trans-unit>
       <trans-unit id="language.text">
         <source>language.text</source>
         <target>some funny description in English</target>

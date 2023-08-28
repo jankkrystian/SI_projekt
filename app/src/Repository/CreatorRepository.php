@@ -76,4 +76,14 @@ class CreatorRepository extends ServiceEntityRepository
         $this->_em->persist($creator);
         $this->_em->flush();
     }
+    /**
+     * Delete entity.
+     *
+     * @param Creator $creator Creator entity
+     */
+    public function delete(Creator $creator): void
+    {
+        $this->_em->remove($creator);
+        $this->_em->flush();
+    }
 }

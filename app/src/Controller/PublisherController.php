@@ -6,11 +6,10 @@
 namespace App\Controller;
 
 use App\Entity\Publisher;
-use App\Service\PublisherService;
 use App\Form\Type\PublisherType;
-use App\Service\PublisherServiceInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Interface\PublisherServiceInterface;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -111,6 +110,82 @@ class PublisherController extends AbstractController
         return $this->render(
             'publisher/create.html.twig',
             ['form' => $form->createView()]
+        );
+    }
+    /**
+     * Edit action.
+     *
+     * @param Request  $request  HTTP request
+     * @param Publisher $publisher Publisher entity
+     *
+     * @return Response HTTP response
+     */
+    #[Route('/{id}/edit', name: 'publisher_edit', requirements: ['id' => '[1-9]\d*'], methods: 'GET|PUT')]
+    public function edit(Request $request, Publisher $publisher): Response
+    {
+        $form = $this->createForm(
+            PublisherType::class,
+            $publisher,
+            [
+                'method' => 'PUT',
+                'action' => $this->generateUrl('publisher_edit', ['id' => $publisher->getId()]),
+            ]
+        );
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->publisherService->save($publisher);
+
+            $this->addFlash(
+                'success',
+                $this->translator->trans('message.added_success')
+            );
+
+            return $this->redirectToRoute('publisher_index');
+        }
+
+        return $this->render(
+            'publisher/edit.html.twig',
+            [
+                'form' => $form->createView(),
+                'publisher' => $publisher,
+            ]
+        );
+    }
+    /**
+     * Delete action.
+     *
+     * @param Request  $request  HTTP request
+     * @param Publisher $publisher Publisher entity
+     *
+     * @return Response HTTP response
+     */
+    #[Route('/{id}/delete', name: 'publisher_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
+    public function delete(Request $request, Publisher $publisher): Response
+    {
+        $form = $this->createForm(FormType::class, $publisher, [
+            'method' => 'DELETE',
+            'action' => $this->generateUrl('publisher_delete', ['id' => $publisher->getId()]),
+        ]);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->publisherService->delete($publisher);
+
+            $this->addFlash(
+                'success',
+                $this->translator->trans('message.deleted_successfully')
+            );
+
+            return $this->redirectToRoute('publisher_index');
+        }
+
+        return $this->render(
+            'publisher/delete.html.twig',
+            [
+                'form' => $form->createView(),
+                'publisher' => $publisher,
+            ]
         );
     }
 

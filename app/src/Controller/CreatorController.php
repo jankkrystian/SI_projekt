@@ -7,7 +7,8 @@ namespace App\Controller;
 
 use App\Entity\Creator;
 use App\Form\Type\CreatorType;
-use App\Service\CreatorServiceInterface;
+use App\Interface\CreatorServiceInterface;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -115,4 +116,81 @@ class CreatorController extends AbstractController
             ['form' => $form->createView()]
         );
     }
+    /**
+     * Edit action.
+     *
+     * @param Request  $request  HTTP request
+     * @param Creator $creator Creator entity
+     *
+     * @return Response HTTP response
+     */
+    #[Route('/{id}/edit', name: 'creator_edit', requirements: ['id' => '[1-9]\d*'], methods: 'GET|PUT')]
+    public function edit(Request $request, Creator $creator): Response
+    {
+        $form = $this->createForm(
+            CreatorType::class,
+            $creator,
+            [
+                'method' => 'PUT',
+                'action' => $this->generateUrl('creator_edit', ['id' => $creator->getId()]),
+            ]
+        );
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->creatorService->save($creator);
+
+            $this->addFlash(
+                'success',
+                $this->translator->trans('message.added_success')
+            );
+
+            return $this->redirectToRoute('creator_index');
+        }
+
+        return $this->render(
+            'creator/edit.html.twig',
+            [
+                'form' => $form->createView(),
+                'creator' => $creator,
+            ]
+        );
+    }
+    /**
+     * Delete action.
+     *
+     * @param Request  $request  HTTP request
+     * @param Creator $creator Creator entity
+     *
+     * @return Response HTTP response
+     */
+    #[Route('/{id}/delete', name: 'creator_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
+    public function delete(Request $request, Creator $creator): Response
+    {
+        $form = $this->createForm(FormType::class, $creator, [
+            'method' => 'DELETE',
+            'action' => $this->generateUrl('creator_delete', ['id' => $creator->getId()]),
+        ]);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->creatorService->delete($creator);
+
+            $this->addFlash(
+                'success',
+                $this->translator->trans('message.deleted_successfully')
+            );
+
+            return $this->redirectToRoute('creator_index');
+        }
+
+        return $this->render(
+            'creator/delete.html.twig',
+            [
+                'form' => $form->createView(),
+                'creator' => $creator,
+            ]
+        );
+    }
+
 }

@@ -6,6 +6,10 @@
 namespace App\Service;
 
 use App\Entity\Book;
+use App\Interface\BookServiceInterface;
+use App\Interface\GenreServiceInterface;
+use App\Interface\PublisherServiceInterface;
+use App\Interface\CreatorServiceInterface;
 use App\Repository\BookRepository;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
@@ -21,6 +25,21 @@ class BookService implements BookServiceInterface
     private BookRepository $bookRepository;
 
     /**
+     * Genre service
+     */
+    private GenreServiceInterface $genreService;
+
+    /**
+     * Publisher service
+     */
+    private PublisherServiceInterface $publisherService;
+
+    /**
+     * Creator service
+     */
+    private CreatorServiceInterface $creatorService;
+
+    /**
      * Paginator.
      */
     private PaginatorInterface $paginator;
@@ -29,11 +48,17 @@ class BookService implements BookServiceInterface
      * Constructor.
      *
      * @param BookRepository     $bookRepository Book repository
+     * @param GenreServiceInterface $genreService Genre serive
+     * @param PublisherServiceInterface $publisherService Publisher serive
+     * @param CreatorServiceInterface $creatorService Creator serive
      * @param PaginatorInterface $paginator      Paginator
      */
-    public function __construct(BookRepository $bookRepository, PaginatorInterface $paginator)
+    public function __construct(BookRepository $bookRepository, GenreServiceInterface $genreService, PublisherServiceInterface $publisherService, CreatorServiceInterface $creatorService, PaginatorInterface $paginator)
     {
         $this->bookRepository = $bookRepository;
+        $this->genreService = $genreService;
+        $this->publisherService = $publisherService;
+        $this->creatorService = $creatorService;
         $this->paginator = $paginator;
     }
 
@@ -61,5 +86,9 @@ class BookService implements BookServiceInterface
     {
 
         $this->bookRepository->save($book);
+    }
+    public function delete(Book $book): void
+    {
+        $this->bookRepository->delete($book);
     }
 }

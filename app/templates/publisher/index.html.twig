@@ -16,10 +16,6 @@
 {% endblock %}
 {% block body %}
 
-    <h4>{{ 'tutaj będzie można przeglądać gatunki?'|trans }}</h4>
-    <br/>
-    <br/>
-    <br/>
     {% if pagination is defined and pagination.items|length %}
 
         <div class="container text-center">
@@ -27,10 +23,9 @@
         <div class="row">
 
         <div class="col-sm-3">
-
-            <h3>Neil Gaiman dla uwagi</h3>
             <div class="list-group">
                 <img src="https://www.toon-books.com/uploads/1/2/5/6/12564774/8090704_orig.jpg">
+                <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" href="{{ url('publisher_create')}}" title="{{'action.create'|trans}}">{{ 'action.create' | trans }}</a>
 
             </div>
         </div>
@@ -43,11 +38,13 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>{{ knp_pagination_sortable(pagination, 'Id'|trans, 'publisher.id') }}</th>
-                <th>{{ knp_pagination_sortable(pagination, 'Name'|trans, 'publisher.title') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.id'|trans, 'publisher.id') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.title'|trans, 'publisher.title') }}</th>
 
-                <th>{{ 'label.actions'|trans }}</th>
-                <th>{{ 'Create'|trans }}</th>
+                <th>{{ 'action.show'|trans }}</th>
+                <th>{{ 'action.edit'|trans }}</th>
+                <th>{{ 'action.delete'|trans }}</th>
+
             </tr>
             </thead>
             <tbody>
@@ -58,14 +55,16 @@
 
 
                     <td>
-                        <a href="{{ url('publisher_show', {id: publisher.id}) }}" title="{{ 'action.show'|trans }}">
-                            {{ 'action.show'|trans }}
-                        </a>
+                        <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" href="{{ url('publisher_show', {id: publisher.id}) }}" title="{{'action.show'|trans}}">{{ 'action.show' | trans }}</a>
                     </td>
                     <td>
-                        <a href="{{ url('publisher_create', {id: publisher.id}) }}" title="{{ 'action.create'|trans }}">
-                            {{ 'action.create'|trans }}
-                        </a>
+                        <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" href="{{ url('publisher_edit', {id: publisher.id}) }}" title="{{'action.edit'|trans}}">{{ 'action.edit' | trans }}</a>
+                    </td>
+                    </td>
+                    <td>
+                        <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" href="{{ url('publisher_delete', {id: publisher.id}) }}" title="{{'action.delete'|trans}}">{{ 'action.delete' | trans }}</a>
+                    </td>
+                    </a>
                     </td>
                 </tr>
             {% endfor %}

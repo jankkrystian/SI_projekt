@@ -6,9 +6,8 @@
 namespace App\Service;
 
 use App\Entity\Creator;
-use App\Service\CreatorServiceInterface;
+use App\Interface\CreatorServiceInterface;
 use App\Repository\CreatorRepository;
-use App\Repository\BookRepository;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
@@ -62,5 +61,9 @@ class CreatorService implements CreatorServiceInterface
     public function save(Creator $creator): void
     {
         $this->creatorRepository->save($creator);
+    }
+    public function delete(Creator $creator): void
+    {
+        $this->creatorRepository->delete($creator);
     }
 }

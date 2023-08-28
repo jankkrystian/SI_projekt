@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Service;
+namespace App\Interface;
 
 use App\Entity\Creator;
 use Knp\Component\Pager\Pagination\PaginationInterface;
@@ -22,6 +22,10 @@ interface CreatorServiceInterface
      * @param Creator $creator Creator entity
      */
     public function save(Creator $creator): void;
-
-
+    /**
+     * @param Creator $creator Creator entity
+     *
+     * @return void Result
+     */
+    public function delete(Creator $creator): void;
 }
