@@ -9,6 +9,7 @@ use App\Repository\CreatorRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class Creator.
@@ -38,7 +39,10 @@ class Creator
      *
      * @var string|null
      */
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type:'string', length: 255)]
+    #[Assert\Type('string')]
+    #[Assert\NotBlank]
+    #[Assert\Length(min:1, max: 255)]
     private ?string $nick;
 
     /**
@@ -46,7 +50,10 @@ class Creator
      *
      * @var string|null
      */
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type:'string', length: 255)]
+    #[Assert\Type('string')]
+    #[Assert\NotBlank]
+    #[Assert\Length(min:2, max: 255)]
     private ?string $name;
 
     /**
@@ -54,14 +61,19 @@ class Creator
      *
      * @var string|null
      */
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type:'string', length: 255)]
+    #[Assert\Type('string')]
+    #[Assert\NotBlank]
+    #[Assert\Length(min:2, max: 255)]
     private ?string $surname;
 
     /**
      * Slug.
      * @var string|null
      */
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type:'string', length: 255)]
+    #[Assert\Type('string')]
+    #[Assert\Length(min:1, max: 255)]
     #[Gedmo\Slug(fields: ['nick'])]
     private ?string $slug = null;
 

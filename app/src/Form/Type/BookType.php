@@ -74,7 +74,7 @@ class BookType extends AbstractType
                     'choice _label'=>function ($creator): string {
                         return $creator->getCreatorSurname();
                     },
-                    'label'=>'label_creator_nick',
+                    'label'=>'label_creator_surname',
                     'placeholder'=>'label.creator_surname',
                     'required'=>true,
 

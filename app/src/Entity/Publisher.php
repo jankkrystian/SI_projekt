@@ -9,6 +9,8 @@ use App\Repository\PublisherRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Class Publisher.
@@ -32,7 +34,10 @@ class Publisher
     /**
      * Title.
      */
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type:'string', length: 255)]
+    #[Assert\Type('string')]
+    #[Assert\NotBlank]
+    #[Assert\Length(min:3, max: 255)]
     private ?string $title;
 
     /**
@@ -40,6 +45,8 @@ class Publisher
      * @var string|null
      */
     #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\Type('string')]
+    #[Assert\Length(min: 3, max: 255)]
     #[Gedmo\Slug(fields: ['title'])]
     private ?string $slug = null;
 
