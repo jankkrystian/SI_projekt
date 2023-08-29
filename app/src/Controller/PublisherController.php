@@ -163,6 +163,14 @@ class PublisherController extends AbstractController
     #[Route('/{id}/delete', name: 'publisher_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
     public function delete(Request $request, Publisher $publisher): Response
     {
+        if(!$this->publisherService->canBeDeleted($publisher)){
+            $this->addFlash(
+                'warning',
+                $this->translator->trans('message.publisher_contains_books')
+            );
+            return $this->redirectToRoute('publisher_index');
+        }
+
         $form = $this->createForm(FormType::class, $publisher, [
             'method' => 'DELETE',
             'action' => $this->generateUrl('publisher_delete', ['id' => $publisher->getId()]),

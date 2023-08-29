@@ -77,6 +77,22 @@ class GenreService implements GenreServiceInterface
     {
         $this->genreRepository->delete($genre);
     }
+    /**
+     * Can Category be deleted?
+     *
+     * @param Category $category Category entity
+     *
+     * @return bool Result
+     */
+    public function canBeDeleted(Genre $genre): bool
+    {
+        try {
+            $result = $this->bookRepository->countByGenre($genre);
 
+            return !($result > 0);
+        } catch (NoResultException|NonUniqueResultException) {
+            return false;
+        }
+    }
 
 }

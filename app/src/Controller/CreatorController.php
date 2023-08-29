@@ -41,9 +41,9 @@ class CreatorController extends AbstractController
     /**
      * Constructor.
      */
-    public function __construct(CreatorServiceInterface $taskService, TranslatorInterface $translator)
+    public function __construct(CreatorServiceInterface $creatorService, TranslatorInterface $translator)
     {
-        $this->creatorService = $taskService;
+        $this->creatorService = $creatorService;
         $this->translator = $translator;
     }
 
@@ -167,6 +167,13 @@ class CreatorController extends AbstractController
     #[Route('/{id}/delete', name: 'creator_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
     public function delete(Request $request, Creator $creator): Response
     {
+        if(!$this->creatorService->canBeDeleted($creator)) {
+            $this->addFlash(
+                'warning',
+                $this->translator->trans('message.creator_contains_books')
+            );
+            return $this->redirectToRoute('creator_index');
+        }
         $form = $this->createForm(FormType::class, $creator, [
             'method' => 'DELETE',
             'action' => $this->generateUrl('creator_delete', ['id' => $creator->getId()]),

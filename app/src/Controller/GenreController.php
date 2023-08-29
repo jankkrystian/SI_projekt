@@ -168,6 +168,13 @@ class GenreController extends AbstractController
     #[Route('/{id}/delete', name: 'genre_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
     public function delete(Request $request, Genre $genre): Response
     {
+        if(!$this->genreService->canBeDeleted($genre)) {
+            $this->addFlash(
+                'warning',
+                $this->translator->trans('message.genre_contains_books')
+            );
+            return $this->redirectToRoute('genre_index');
+        }
         $form = $this->createForm(FormType::class, $genre, [
             'method' => 'DELETE',
             'action' => $this->generateUrl('genre_delete', ['id' => $genre->getId()]),

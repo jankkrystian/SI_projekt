@@ -8,6 +8,7 @@ namespace App\Service;
 use App\Entity\Creator;
 use App\Interface\CreatorServiceInterface;
 use App\Repository\CreatorRepository;
+use App\Repository\BookRepository;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
@@ -27,14 +28,20 @@ class CreatorService implements CreatorServiceInterface
     private PaginatorInterface $paginator;
 
     /**
+     * Book repository.
+     */
+    private BookRepository $bookRepository;
+    /**
      * Constructor.
      *
      * @param CreatorRepository     $creatorRepository Creator repository
+     * @param BookRepository     $bookRepository Book repository
      * @param PaginatorInterface $paginator      Paginator
      */
-    public function __construct(CreatorRepository $creatorRepository, PaginatorInterface $paginator)
+    public function __construct(CreatorRepository $creatorRepository, BookRepository $bookRepository, PaginatorInterface $paginator)
     {
         $this->creatorRepository = $creatorRepository;
+        $this->bookRepository = $bookRepository;
         $this->paginator = $paginator;
     }
 
@@ -65,5 +72,22 @@ class CreatorService implements CreatorServiceInterface
     public function delete(Creator $creator): void
     {
         $this->creatorRepository->delete($creator);
+    }
+    /**
+     * Can Category be deleted?
+     *
+     * @param Creator $creator Creator entity
+     *
+     * @return bool Result
+     */
+    public function canBeDeleted(Creator $creator): bool
+    {
+        try {
+            $result = $this->bookRepository->countByCreator($creator);
+
+            return !($result > 0);
+        } catch (NoResultException|NonUniqueResultException) {
+            return false;
+        }
     }
 }

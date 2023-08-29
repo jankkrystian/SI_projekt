@@ -28,4 +28,13 @@ interface CreatorServiceInterface
      * @return void Result
      */
     public function delete(Creator $creator): void;
+
+    /**
+     * Can Category be deleted?
+     *
+     * @param Creator $creator Creator entity
+     *
+     * @return bool Result
+     */
+    public function canBeDeleted(Creator $creator): bool;
 }

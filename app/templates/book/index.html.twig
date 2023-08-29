@@ -15,12 +15,23 @@
 
 {% block body %}
     {% if pagination is defined and pagination.items|length %}
-        <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" href="{{ url('book_create')}}" title="{{'action.create'|trans}}">{{ 'action.create' | trans }}</a>
 
+        <div class="container text-center">
 
+        <div class="row">
+
+        <div class="col-sm-3">
+            <div class="list-group">
+                <img src="error_image.png">
+                <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" href="{{ url('book_create')}}" title="{{'action.create'|trans}}">{{ 'action.create' | trans }}</a>
+
+            </div>
+        </div>
+        <div class="col-sm-9">
         <div class="navigation text-center">
             {{ knp_pagination_render(pagination) }}
         </div>
+        <div class="row">
 
         <table class="table table-striped">
             <thead>

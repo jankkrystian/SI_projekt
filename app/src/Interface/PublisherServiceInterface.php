@@ -29,4 +29,12 @@ interface PublisherServiceInterface
      * @return void Result
      */
     public function delete(Publisher $publisher): void;
+    /**
+     * Can Publisher be deleted?
+     *
+     * @param Publisher $publisher Publisher entity
+     *
+     * @return bool Result
+     */
+    public function canBeDeleted(Publisher $publisher): bool;
 }

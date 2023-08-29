@@ -91,4 +91,65 @@ class BookRepository extends ServiceEntityRepository
         $this->_em->remove($book);
         $this->_em->flush();
     }
+
+    /**
+     * Count books by category.
+     *
+     * @param Genre $genre Genre
+     *
+     * @return int Number of books in genre
+     *
+     * @throws NoResultException
+     * @throws NonUniqueResultException
+     */
+    public function countByGenre(Genre $genre): int
+    {
+        $qb = $this->getOrCreateQueryBuilder();
+
+        return $qb->select($qb->expr()->countDistinct('book.id'))
+            ->where('book.genre = :genre')
+            ->setParameter(':genre', $genre)
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+    /**
+     * Count books by publisher.
+     *
+     * @param Publisher $publisher Publisher
+     *
+     * @return int Number of books in publisher
+     *
+     * @throws NoResultException
+     * @throws NonUniqueResultException
+     */
+    public function countByPublisher(Publisher $publisher): int
+    {
+        $qb = $this->getOrCreateQueryBuilder();
+
+        return $qb->select($qb->expr()->countDistinct('book.id'))
+            ->where('book.publisher = :publisher')
+            ->setParameter(':publisher', $publisher)
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+    /**
+     * Count books by creator.
+     *
+     * @param Creator $creator Creator
+     *
+     * @return int Number of books in creator
+     *
+     * @throws NoResultException
+     * @throws NonUniqueResultException
+     */
+    public function countByCreator(Creator $creator): int
+    {
+        $qb = $this->getOrCreateQueryBuilder();
+
+        return $qb->select($qb->expr()->countDistinct('book.id'))
+            ->where('book.creator = :creator')
+            ->setParameter(':creator', $creator)
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
 }

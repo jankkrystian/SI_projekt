@@ -8,6 +8,8 @@ namespace App\Service;
 use App\Entity\Publisher;
 use App\Interface\PublisherServiceInterface;
 use App\Repository\PublisherRepository;
+use App\Repository\BookRepository;
+use Doctrine\ORM\QueryBuilder;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
@@ -27,14 +29,20 @@ class PublisherService implements PublisherServiceInterface
     private PaginatorInterface $paginator;
 
     /**
+     * Book repository
+     */
+    private BookRepository $bookRepository;
+
+    /**
      * Constructor.
      *
      * @param PublisherRepository     $publisherRepository Publisher repository
      * @param PaginatorInterface $paginator      Paginator
      */
-    public function __construct(PublisherRepository $publisherRepository, PaginatorInterface $paginator)
+    public function __construct(PublisherRepository $publisherRepository, BookRepository $bookRepository, PaginatorInterface $paginator)
     {
         $this->publisherRepository = $publisherRepository;
+        $this->bookRepository = $bookRepository;
         $this->paginator = $paginator;
     }
 
@@ -65,5 +73,23 @@ class PublisherService implements PublisherServiceInterface
     public function delete(Publisher $publisher): void
     {
         $this->publisherRepository->delete($publisher);
+    }
+
+    /**
+     * Can Category be deleted?
+     *
+     * @param Publisher $publisher Publisher entity
+     *
+     * @return bool Result
+     */
+    public function canBeDeleted(Publisher $publisher): bool
+    {
+        try {
+            $result = $this->bookRepository->countByPublisher($publisher);
+
+            return !($result > 0);
+        } catch (NoResultException|NonUniqueResultException) {
+            return false;
+        }
     }
 }

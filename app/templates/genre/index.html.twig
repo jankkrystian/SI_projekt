@@ -24,7 +24,7 @@
 
         <div class="col-sm-3">
             <div class="list-group">
-                <img src="https://www.toon-books.com/uploads/1/2/5/6/12564774/8090704_orig.jpg">
+                <img src="error_image.png">
                 <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" href="{{ url('genre_create')}}" title="{{'action.create'|trans}}">{{ 'action.create' | trans }}</a>
 
             </div>
@@ -62,8 +62,6 @@
                     </td>
                     <td>
                         <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" href="{{ url('genre_delete', {id: genre.id}) }}" title="{{'action.delete'|trans}}">{{ 'action.delete' | trans }}</a>
-                    </td>
-                        </a>
                     </td>
                 </tr>
             {% endfor %}
