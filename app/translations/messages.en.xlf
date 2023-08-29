@@ -6,6 +6,10 @@
       <source>welcome.site</source>
       <target>WHAT KIND OF SITE IS IT?</target>
       </trans-unit>
+      <trans-unit id="welcome.title">
+        <source>welcome.title</source>
+        <target>Hello library!</target>
+      </trans-unit>
       <trans-unit id="label.actions">
         <source>label.actions</source>
         <target>Show</target>
@@ -107,57 +111,61 @@
         <target>Create a new genre!</target>
       </trans-unit>
       <trans-unit id="title.genre_edit">
-              <source>title.genre_edit</source>
-              <target>Edit the genre!</target>
-            </trans-unit>
+        <source>title.genre_edit</source>
+        <target>Edit the genre!</target>
+      </trans-unit>
       <trans-unit id="title.genre_delete">
         <source>title.genre_delete</source>
         <target>Delete the genre!</target>
       </trans-unit>
       <trans-unit id="title.publisher_details">
-              <source>title.publisher_details</source>
-              <target>Some details about the publisher</target>
-            </trans-unit>
-            <trans-unit id="title.publisher_create">
-              <source>title.publisher_create</source>
-              <target>Create a new publisher!</target>
-            </trans-unit>
-            <trans-unit id="title.publisher_edit">
-                <source>title.publisher_edit</source>
-                <target>Edit the publisher!</target>
-            </trans-unit>
-            <trans-unit id="title.publisher_delete">
-              <source>title.publisher_delete</source>
-              <target>Delete the publisher!</target>
-            </trans-unit>
-            <trans-unit id="title.creator_details">
-                <source>title.creator_details</source>
-                <target>Some details about the creator</target>
-            </trans-unit>
-            <trans-unit id="nick.creator_create">
-                <source>nick.creator_create</source>
-                <target>Create a new creator!</target>
-            </trans-unit>
-            <trans-unit id="title.creator_edit">
-                <source>title.creator_edit</source>
-                <target>Edit the creator!</target>
-            </trans-unit>
-            <trans-unit id="title.creator_delete">
-                <source>title.creator_delete</source>
-                <target>Delete the creator!</target>
-            </trans-unit>
-            <trans-unit id="message.publisher_contains_books">
-                <source>message.publisher_contains_books</source>
-                <target>Can't delete, some of the books are currently using this publisher!</target>
-            </trans-unit>
-            <trans-unit id="message.genre_contains_books">
-                <source>message.genre_contains_books</source>
-                <target>Can't delete, some of the books are currently using this genre!</target>
-            </trans-unit>
-            <trans-unit id="message.creator_contains_books">
-                <source>message.creator_contains_books</source>
-                <target>Can't delete, some of the books are currently using this creator!</target>
-            </trans-unit>
+        <source>title.publisher_details</source>
+        <target>Some details about the publisher</target>
+      </trans-unit>
+      <trans-unit id="title.publisher_create">
+        <source>title.publisher_create</source>
+        <target>Create a new publisher!</target>
+      </trans-unit>
+      <trans-unit id="title.publisher_edit">
+        <source>title.publisher_edit</source>
+        <target>Edit the publisher!</target>
+      </trans-unit>
+      <trans-unit id="title.publisher_delete">
+        <source>title.publisher_delete</source>
+        <target>Delete the publisher!</target>
+      </trans-unit>
+      <trans-unit id="title.creator_details">
+        <source>title.creator_details</source>
+        <target>Some details about the creator</target>
+      </trans-unit>
+      <trans-unit id="nick.creator_create">
+        <source>nick.creator_create</source>
+        <target>Create a new creator!</target>
+      </trans-unit>
+      <trans-unit id="title.creator_edit">
+        <source>title.creator_edit</source>
+        <target>Edit the creator!</target>
+      </trans-unit>
+      <trans-unit id="title.creator_delete">
+        <source>title.creator_delete</source>
+        <target>Delete the creator!</target>
+      </trans-unit>
+      <trans-unit id="message.publisher_contains_books">
+        <source>message.publisher_contains_books</source>
+        <target>Can't delete, some of the books are currently using this publisher!</target>
+      </trans-unit>
+      <trans-unit id="message.genre_contains_books">
+        <source>message.genre_contains_books</source>
+        <target>Can't delete, some of the books are currently using this genre!</target>
+      </trans-unit>
+      <trans-unit id="message.creator_contains_books">
+        <source>message.creator_contains_books</source>
+        <target>Can't delete, some of the books are currently using this creator!</target>
+      </trans-unit>
+      <trans-unit id="title.book_delete">
+        <source>title.book_delete</source>
+        <target>Delete a book!</target>
+      </trans-unit>
       <trans-unit id="language.text">
         <source>language.text</source>
         <target>some funny description in English</target>

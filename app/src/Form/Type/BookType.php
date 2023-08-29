@@ -39,17 +39,17 @@ class BookType extends AbstractType
             [
                 'label' => 'label.title',
                 'required' => true,
-                'attr' => ['max_length' => 64],
+                'attr' => ['max_length' => 255],
             ])
         ->add(
             'genre',
             EntityType::class,
             ['class'=>Genre::class,
-                'choice _label'=>function ($genre): string {
-                return $genre->getGenreTitle();
+                'choice_label'=>function ($genre): string {
+                return $genre->getGenre();
                 },
-                'label'=>'label_genre_title',
-                'placeholder'=>'label.genre_title',
+                'label'=>'label_genre',
+                'placeholder'=>'label.genre',
                 'required'=>true,
 
             ]
@@ -58,11 +58,11 @@ class BookType extends AbstractType
                 'publisher',
                 EntityType::class,
                 ['class'=>Publisher::class,
-                    'choice _label'=>function ($publisher): string {
-                        return $publisher->getPublisherTitle();
+                    'choice_label'=>function ($publisher): string {
+                        return $publisher->getPublisher();
                     },
-                    'label'=>'label_publisher_title',
-                    'placeholder'=>'label.publisher_title',
+                    'label'=>'label_publisher',
+                    'placeholder'=>'label.publisher',
                     'required'=>true,
 
                 ]
@@ -71,11 +71,11 @@ class BookType extends AbstractType
                 'creator',
                 EntityType::class,
                 ['class'=>Creator::class,
-                    'choice _label'=>function ($creator): string {
-                        return $creator->getCreatorSurname();
+                    'choice_label'=>function ($creator): string {
+                        return $creator->getCreator();
                     },
-                    'label'=>'label_creator_surname',
-                    'placeholder'=>'label.creator_surname',
+                    'label'=>'label_creator',
+                    'placeholder'=>'label.creator',
                     'required'=>true,
 
                 ]
@@ -106,4 +106,3 @@ class BookType extends AbstractType
         return 'book';
     }
 }
-
