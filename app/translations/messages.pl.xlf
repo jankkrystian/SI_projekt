@@ -4,15 +4,11 @@
     <body>
       <trans-unit id="welcome.site">
       <source>welcome.site</source>
-      <target>WHAT KIND OF SITE IS IT?</target>
+      <target>CO TO ZA STRONA?</target>
       </trans-unit>
       <trans-unit id="welcome.title">
         <source>welcome.title</source>
-        <target>Hello library!</target>
-      </trans-unit>
-      <trans-unit id="label.actions">
-        <source>label.actions</source>
-        <target>Show</target>
+        <target>Hej biblioteko!</target>
       </trans-unit>
       <trans-unit id="label.id">
         <source>label.id</source>
@@ -20,15 +16,15 @@
       </trans-unit>
       <trans-unit id="label.title">
         <source>label.title</source>
-        <target>Title</target>
+        <target>Tytuł</target>
       </trans-unit>
       <trans-unit id="label.content">
         <source>label.content</source>
-        <target>Content</target>
+        <target>Zawartość</target>
       </trans-unit>
       <trans-unit id="label.tags">
         <source>label.tags</source>
-        <target>Tags</target>
+        <target>Tagi</target>
       </trans-unit>
       <trans-unit id="label.nick">
         <source>label.nick</source>
@@ -36,27 +32,27 @@
       </trans-unit>
       <trans-unit id="label.name">
         <source>label.name</source>
-        <target>Name</target>
+        <target>Imię</target>
       </trans-unit>
       <trans-unit id="label.surname">
         <source>label.surname</source>
-        <target>Surname</target>
+        <target>Nazwisko</target>
       </trans-unit>
       <trans-unit id="label.genre.title">
         <source>label.genre.title</source>
-        <target>Title</target>
+        <target>Tytuł</target>
       </trans-unit>
       <trans-unit id="label.publisher.title">
         <source>label.publisher.title</source>
-        <target>Publisher</target>
+        <target>Wydawnictwo</target>
       </trans-unit>
       <trans-unit id="label.creator.surname">
         <source>label.creator.surname</source>
-        <target>Author</target>
+        <target>Autor</target>
       </trans-unit>
       <trans-unit id="message.empty_list">
         <source>message.empty_list</source>
-        <target>List is empty.</target>
+        <target>List jest pusta.</target>
       </trans-unit>
       <trans-unit id="message.record_not_found">
         <source>message.record_not_found</source>
@@ -72,103 +68,103 @@
       </trans-unit>
       <trans-unit id="message.added_success">
       <source>message.added_success</source>
-      <target>Good job, added successfully!</target>
+      <target>Dobra robota, dodano!!</target>
       </trans-unit>
       <trans-unit id="message.deleted_successfully">
        <source>message.deleted_successfully</source>
-      <target>Good job, deleted successfully!</target>
+      <target>Dobra robota, usunięto!</target>
       </trans-unit>
       <trans-unit id="action.back_to_list">
         <source>action.back_to_list</source>
-        <target>I want to go back</target>
+        <target>Chcę wrócić</target>
       </trans-unit>
       <trans-unit id="action.show">
         <source>action.show</source>
-        <target>Show</target>
+        <target>Pokaż</target>
       </trans-unit>
       <trans-unit id="action.save">
         <source>action.save</source>
-        <target>I want to save it!</target>
+        <target>Chcę zapisać</target>
       </trans-unit>
       <trans-unit id="action.create">
         <source>action.create</source>
-        <target>Create</target>
+        <target>Stwórz!</target>
       </trans-unit>
       <trans-unit id="action.edit">
         <source>action.edit</source>
-        <target>Edit</target>
+        <target>Chcę edytować</target>
       </trans-unit>
       <trans-unit id="action.delete">
         <source>action.delete</source>
-        <target>Delete</target>
+        <target>Chcę usunąć</target>
       </trans-unit>
       <trans-unit id="title.genre_details">
         <source>title.genre_details</source>
-        <target>Some details about the genre</target>
+        <target>Szczegóły na temat gatunku</target>
       </trans-unit>
       <trans-unit id="title.genre_create">
         <source>title.genre_create</source>
-        <target>Create a new genre!</target>
+        <target>Stwórz nowy gatunek!</target>
       </trans-unit>
       <trans-unit id="title.genre_edit">
         <source>title.genre_edit</source>
-        <target>Edit the genre!</target>
+        <target>Edytuj gatunek!</target>
       </trans-unit>
       <trans-unit id="title.genre_delete">
         <source>title.genre_delete</source>
-        <target>Delete the genre!</target>
+        <target>Usuń gatunek!</target>
       </trans-unit>
       <trans-unit id="title.publisher_details">
         <source>title.publisher_details</source>
-        <target>Some details about the publisher</target>
+        <target>Szczegóły na temat wydawnictwa</target>
       </trans-unit>
       <trans-unit id="title.publisher_create">
         <source>title.publisher_create</source>
-        <target>Create a new publisher!</target>
+        <target>Stwórz nowe wydawnictwo!</target>
       </trans-unit>
       <trans-unit id="title.publisher_edit">
         <source>title.publisher_edit</source>
-        <target>Edit the publisher!</target>
+        <target>Edytuj wydawnictwo!</target>
       </trans-unit>
       <trans-unit id="title.publisher_delete">
         <source>title.publisher_delete</source>
-        <target>Delete the publisher!</target>
+        <target>Usuń wydawnictwo!</target>
       </trans-unit>
       <trans-unit id="title.creator_details">
         <source>title.creator_details</source>
-        <target>Some details about the creator</target>
+        <target>Szczegóły na temat autora</target>
       </trans-unit>
       <trans-unit id="nick.creator_create">
         <source>nick.creator_create</source>
-        <target>Create a new creator!</target>
+        <target>Stwórz nowego autora!</target>
       </trans-unit>
       <trans-unit id="title.creator_edit">
         <source>title.creator_edit</source>
-        <target>Edit the creator!</target>
+        <target>Edytuj autora!</target>
       </trans-unit>
       <trans-unit id="title.creator_delete">
         <source>title.creator_delete</source>
-        <target>Delete the creator!</target>
+        <target>Usuń autora!</target>
       </trans-unit>
       <trans-unit id="message.publisher_contains_books">
         <source>message.publisher_contains_books</source>
-        <target>Can't delete, some of the books are currently using this publisher.</target>
+        <target>Nie można usunąć, wydawnictwo w użyciu książki!</target>
       </trans-unit>
       <trans-unit id="message.genre_contains_books">
         <source>message.genre_contains_books</source>
-        <target>Can't delete, some of the books are currently using this genre.</target>
+        <target>Nie można usunąć, gatunek w użyciu książki!</target>
       </trans-unit>
       <trans-unit id="message.creator_contains_books">
         <source>message.creator_contains_books</source>
-        <target>Can't delete, some of the books are currently using this creator.</target>
+        <target>Nie można usunąć, autor w użyciu książki!</target>
       </trans-unit>
       <trans-unit id="title.book_delete">
         <source>title.book_delete</source>
-        <target>Delete a book!</target>
+        <target>Usuń książkę!</target>
       </trans-unit>
       <trans-unit id="language.text">
         <source>language.text</source>
-        <target>some funny description in English</target>
+        <target>opis opis opis</target>
       </trans-unit>
     </body>
   </file>

@@ -23,7 +23,7 @@ class GenreFixtures extends AbstractBaseFixtures
      */
     public function loadData(): void
     {
-        $this->createMany(3, 'genres', function (int $i) {
+        $this->createMany(10, 'genres', function (int $i) {
             $genre = new Genre();
             $genre->setTitle($this->faker->unique()->word);
 
