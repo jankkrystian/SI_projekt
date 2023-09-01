@@ -50,9 +50,7 @@
             {% for genre in pagination.items %}
                 <tr>
                     <td>{{ genre.id }}</td>
-                    <td>{{ genre.title }}</td>
-
-
+                    <td>{{ genre.genreTitle }}</td>
                     <td>
                         <a href="{{ url('genre_show', {id: genre.id}) }}" title="{{'action.show'|trans}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{ 'action.show' | trans }}</a>
                     </td>

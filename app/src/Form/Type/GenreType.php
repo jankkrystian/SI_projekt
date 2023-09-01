@@ -30,10 +30,10 @@ class GenreType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder->add(
-            'title',
+            'genreTitle',
             TextType::class,
             [
-                'label' => 'label.title',
+                'label' => 'label.genreTitle',
                 'required' => true,
                 'attr' => ['max_length' => 64],
             ]);

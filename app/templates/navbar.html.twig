@@ -25,7 +25,8 @@
 
             </ul>
             <form class="d-flex" role="search">
-                <a class="btn btn-primary" href="#" role="button">((the logoout button))</a>
+                <a href="{{ url('app_login')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{ 'action.login' | trans }}</a>
+                <a href="{{ url('app_logout')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{ 'action.logout' | trans }}</a>
                 <input class="form-control me-2" type="search" placeholder="wyszukaj, czego pragniesz..." aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>

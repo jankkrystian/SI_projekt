@@ -13,11 +13,11 @@
             <dt>{{ 'label.title'|trans }}</dt>
             <dd>{{  book.title }}</dd>
             <dt>{{ 'label.genre'|trans }}</dt>
-            <dd>{{  book.genre.title }}</dd>
+            <dd>{{  book.genre.genreTitle }}</dd>
             <dt>{{ 'label.creator'|trans }}</dt>
             <dd>{{  book.creator.nick }}</dd>
             <dt>{{ 'label.publisher'|trans }}</dt>
-            <dd>{{  book.publisher.title }}</dd>
+            <dd>{{  book.publisher.publisherTitle }}</dd>
         </dl>
         <p>
             <a href="{{ url('book_index') }}" title="{{ 'action.back_to_list'|trans }}">

@@ -19,8 +19,6 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 #[ORM\Entity(repositoryClass: PublisherRepository::class)]
 #[ORM\Table(name: 'publishers')]
-#[ORM\UniqueConstraint(name: 'uq_publishers_title', columns: ['title'])]
-#[UniqueEntity(fields: ['title'])]
 class Publisher
 {
     /**
@@ -38,7 +36,7 @@ class Publisher
     #[Assert\Type('string')]
     #[Assert\NotBlank]
     #[Assert\Length(min:3, max: 255)]
-    private ?string $title;
+    private ?string $publisherTitle;
 
     /**
      * Slug.
@@ -47,7 +45,7 @@ class Publisher
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\Type('string')]
     #[Assert\Length(min: 3, max: 255)]
-    #[Gedmo\Slug(fields: ['title'])]
+    #[Gedmo\Slug(fields: ['publisherTitle'])]
     private ?string $slug = null;
 
     /**
@@ -65,19 +63,19 @@ class Publisher
      *
      * @return string|null Title
      */
-    public function getTitle(): ?string
+    public function getPublisherTitle(): ?string
     {
-        return $this->title;
+        return $this->publisherTitle;
     }
 
     /**
      * Setter for title.
      *
-     * @param string|null $title Title
+     * @param string|null $publisherTitle publisherTitle
      */
-    public function setTitle(?string $title): void
+    public function setPublisherTitle(?string $publisherTitle): void
     {
-        $this->title = $title;
+        $this->publisherTitle = $publisherTitle;
     }
 
     public function getSlug(): ?string

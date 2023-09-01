@@ -10,8 +10,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: GenreRepository::class)]
 #[ORM\Table(name: 'genres')]
-#[ORM\UniqueConstraint(name: 'uq_genres_title', columns: ['title'])]
-#[UniqueEntity(fields: ['title'])]
 class Genre
 {
     #[ORM\Id]
@@ -23,8 +21,8 @@ class Genre
     #[ORM\Column(type:'string', length: 255)]
     #[Assert\Type('string')]
     #[Assert\NotBlank]
-    #[Assert\Length(min:3, max: 255)]
-    private ?string $title = null;
+    #[Assert\Length(min:2, max: 255)]
+    private ?string $genreTitle = null;
 
     /**
      * Slug.
@@ -32,8 +30,8 @@ class Genre
      */
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\Type('string')]
-    #[Assert\Length(min: 3, max: 255)]
-    #[Gedmo\Slug(fields: ['title'])]
+    #[Assert\Length(min: 2, max: 255)]
+    #[Gedmo\Slug(fields: ['genreTitle'])]
     private ?string $slug = null;
 
     public function getId(): ?int
@@ -41,14 +39,14 @@ class Genre
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getGenreTitle(): ?string
     {
-        return $this->title;
+        return $this->genreTitle;
     }
 
-    public function setTitle(string $title): void
+    public function setGenreTitle(string $genreTitle): void
     {
-        $this->title = $title;
+        $this->genreTitle = $genreTitle;
 
     }
 

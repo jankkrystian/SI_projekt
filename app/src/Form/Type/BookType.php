@@ -46,7 +46,7 @@ class BookType extends AbstractType
             EntityType::class,
             ['class'=>Genre::class,
                 'choice_label'=>function ($genre): string {
-                return $genre->getGenre();
+                return $genre->getGenreTitle();
                 },
                 'label'=>'label_genre',
                 'placeholder'=>'label.genre',
@@ -59,7 +59,7 @@ class BookType extends AbstractType
                 EntityType::class,
                 ['class'=>Publisher::class,
                     'choice_label'=>function ($publisher): string {
-                        return $publisher->getPublisher();
+                        return $publisher->getPublisherTitle();
                     },
                     'label'=>'label_publisher',
                     'placeholder'=>'label.publisher',
@@ -72,7 +72,7 @@ class BookType extends AbstractType
                 EntityType::class,
                 ['class'=>Creator::class,
                     'choice_label'=>function ($creator): string {
-                        return $creator->getCreator();
+                        return $creator->getNick();
                     },
                     'label'=>'label_creator',
                     'placeholder'=>'label.creator',

@@ -50,8 +50,8 @@ class PublisherRepository extends ServiceEntityRepository
     public function queryAll(): QueryBuilder
     {
         return $this->getOrCreateQueryBuilder()
-            ->select('partial publisher.{id, title}')
-            ->orderBy('publisher.title', 'DESC');
+            ->select('partial publisher.{id, publisherTitle}')
+            ->orderBy('publisher.publisherTitle', 'DESC');
     }
 
 

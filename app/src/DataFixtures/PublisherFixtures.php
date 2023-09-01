@@ -24,7 +24,7 @@ class PublisherFixtures extends AbstractBaseFixtures
     {
         $this->createMany(3, 'publishers', function (int $i) {
             $publisher = new Publisher();
-            $publisher->setTitle($this->faker->unique()->word);
+            $publisher->setPublisherTitle($this->faker->unique()->word);
 
 
             return $publisher;

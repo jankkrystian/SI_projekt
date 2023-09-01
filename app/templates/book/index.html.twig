@@ -52,8 +52,8 @@
                 <tr>
                     <td>{{ book.id }}</td>
                     <td>{{ book.title }}</td>
-                    <td>{{ book.genre.title }}</td>
-                    <td>{{ book.publisher.title }}</td>
+                    <td>{{ book.genre.genreTitle }}</td>
+                    <td>{{ book.publisher.publisherTitle }}</td>
                     <td>{{ book.creator.surname }}</td>
                     <td>
                         <a href="{{ url('book_show', {id: book.id}) }}" title="{{'action.show'|trans}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{ 'action.show' | trans }}</a>
