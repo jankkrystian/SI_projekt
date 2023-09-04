@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.reservation_delete'|trans }}
+{% endblock %}
+
+{% block body %}
+    <body>
+    <div class="container">
+        <div class="row">
+            {% include 'default/_form.html.twig' with {
+                page_title: 'title.reservation_delete'|trans({'%id%': reservation.id|default('')}),
+                form: form,
+                submit_label: 'action.delete'|trans,
+                back_to_list_path: 'reservation_index',
+            } %}
+
+        </div>
+    </div>
+    </body>
+{% endblock %}

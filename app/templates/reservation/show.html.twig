@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.details'|trans }}
+{% endblock %}
+
+{% block body %}
+    <body>
+    <div class="container">
+        <div class="row">
+            <h1>{{ 'title.details'|trans }}</h1>
+            {% if reservation is defined and reservation|length %}
+                <dl class="dl-horizontal">
+                    <dt>{{ 'label.id'|trans }}</dt>
+                    <dd>{{ reservation.id }}</dd>
+                    <dt>{{ 'label.email'|trans }}</dt>
+                    <dd>{{  reservation.email }}</dd>
+                    <dt>{{ 'label.nick'|trans }}</dt>
+                    <dd>{{ reservation.nick }}</dd>
+                    <dt>{{ 'label.note'|trans }}</dt>
+                    <dd>{{ reservation.note }}</dd>
+                    <dt>{{ 'label.book_id'|trans }}</dt>
+                    <dd>{{ reservation.book.id }}</dd>
+                    <dt>{{ 'label.actions'|trans }}</dt>
+                    <dd>
+                        <a class="btn btn-outline-warning me-2 mt-2" href="{{ url('reservation_delete', {id: reservation.id}) }}" title="{{ 'action.resolve'|trans }}">
+                            {{ 'action.resolve'|trans }}
+                        </a>
+
+                    </dd>
+                </dl>
+            {% else %}
+                {% include 'default/_single_alert_message.html.twig' with {
+                    type: 'warning',
+                    message: 'message.record_not_found'|trans
+                } %}
+            {% endif %}
+        </div>
+    </div>
+    </body>
+
+{% endblock %}

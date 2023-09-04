@@ -48,6 +48,7 @@ class BookFixtures extends AbstractBaseFixtures implements DependentFixtureInter
             $creator = $this->getRandomReference('creators');
             $book->setCreator($creator);
 
+
             return $book;
         });
 

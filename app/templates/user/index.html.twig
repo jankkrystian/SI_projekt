@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ 'title.users_list'|trans }}
+    {{ 'title.user_list'|trans }}
 {% endblock %}
 
 {% block body %}
     <body>
     <div class="container">
         <div class="row">
-            <h1>{{ 'title.users_list'|trans }}</h1>
+            <h1>{{ 'title.user_list'|trans }}</h1>
             {% if pagination is defined and pagination.items|length %}
                 <table class="table table-striped">
                     <thead>

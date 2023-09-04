@@ -78,9 +78,9 @@ class GenreService implements GenreServiceInterface
         $this->genreRepository->delete($genre);
     }
     /**
-     * Can Category be deleted?
+     * Can Genre be deleted?
      *
-     * @param Category $category Category entity
+     * @param Genre $genre Genre entity
      *
      * @return bool Result
      */

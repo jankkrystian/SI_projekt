@@ -94,6 +94,10 @@
         <source>action.create</source>
         <target>Create</target>
       </trans-unit>
+      <trans-unit id="action.borrow">
+        <source>action.borrow</source>
+        <target>Borrow</target>
+      </trans-unit>
       <trans-unit id="action.edit">
         <source>action.edit</source>
         <target>Edit</target>
@@ -108,7 +112,7 @@
       </trans-unit>
       <trans-unit id="title.genre_create">
         <source>title.genre_create</source>
-        <target>Create a new genre!</target>
+        <target>Create new genre!</target>
       </trans-unit>
       <trans-unit id="title.genre_edit">
         <source>title.genre_edit</source>
@@ -124,7 +128,7 @@
       </trans-unit>
       <trans-unit id="title.publisher_create">
         <source>title.publisher_create</source>
-        <target>Create a new publisher!</target>
+        <target>Create new publisher!</target>
       </trans-unit>
       <trans-unit id="title.publisher_edit">
         <source>title.publisher_edit</source>
@@ -140,7 +144,7 @@
       </trans-unit>
       <trans-unit id="nick.creator_create">
         <source>nick.creator_create</source>
-        <target>Create a new creator!</target>
+        <target>Create new creator!</target>
       </trans-unit>
       <trans-unit id="title.creator_edit">
         <source>title.creator_edit</source>
@@ -177,6 +181,38 @@
       <trans-unit id="language.text">
         <source>language.text</source>
         <target>some funny description in English</target>
+      </trans-unit>
+      <trans-unit id="label.email">
+        <source>label.email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="label.note">
+        <source>label.note</source>
+        <target>Note</target>
+      </trans-unit>
+      <trans-unit id="label.book.id">
+        <source>label.book.id</source>
+        <target>Book's id</target>
+      </trans-unit>
+      <trans-unit id="title.reservation_list">
+        <source>title.reservation_list</source>
+        <target>Books that are reserved at the moment</target>
+      </trans-unit>
+      <trans-unit id="label.password">
+        <source>label.password</source>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit id="title.user_list">
+        <source>title.user_list</source>
+        <target>List of the users</target>
+      </trans-unit>
+      <trans-unit id="title.create_reservation">
+        <source>title.create_reservation</source>
+        <target>Create new reservation!</target>
+      </trans-unit>
+      <trans-unit id="title.reservation_delete">
+        <source>title.reservation_delete</source>
+        <target>Delete this reservation!</target>
       </trans-unit>
     </body>
   </file>
