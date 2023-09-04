@@ -42,12 +42,12 @@
         <source>label.surname</source>
         <target>Surname</target>
       </trans-unit>
-      <trans-unit id="label.genre.title">
-        <source>label.genre.title</source>
-        <target>Title</target>
+      <trans-unit id="label.genre.genreTitle">
+        <source>label.genre.genreTitle</source>
+        <target>Genre</target>
       </trans-unit>
-      <trans-unit id="label.publisher.title">
-        <source>label.publisher.title</source>
+      <trans-unit id="label.publisher.publisherTitle">
+        <source>label.publisher.publisherTitle</source>
         <target>Publisher</target>
       </trans-unit>
       <trans-unit id="label.creator.surname">

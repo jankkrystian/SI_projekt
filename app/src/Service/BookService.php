@@ -69,10 +69,11 @@ class BookService implements BookServiceInterface
      *
      * @return PaginationInterface<string, mixed> Paginated list
      */
-    public function getPaginatedList(int $page): PaginationInterface
+    public function getPaginatedList(int $page, array $filters = []): PaginationInterface
     {
+        $filters = $this->prepareFilters($filters);
         return $this->paginator->paginate(
-            $this->bookRepository->queryAll(),
+            $this->bookRepository->queryAll($filters),
             $page,
             BookRepository::PAGINATOR_ITEMS_PER_PAGE
         );
@@ -90,5 +91,38 @@ class BookService implements BookServiceInterface
     public function delete(Book $book): void
     {
         $this->bookRepository->delete($book);
+    }
+    /**
+     * Prepare filters for the tasks list.
+     *
+     * @param array<string, int> $filters Raw filters from request
+     *
+     * @return array<string, object> Result array of filters
+     */
+    private function prepareFilters(array $filters): array
+    {
+        $resultFilters = [];
+        if (!empty($filters['genre_id'])) {
+            $genre = $this->genreService->findOneById($filters['genre_id']);
+            if (null !== $genre) {
+                $resultFilters['genre'] = $genre;
+            }
+        }
+
+        if (!empty($filters['publisher_id'])) {
+            $publisher = $this->publisherService->findOneById($filters['publisher_id']);
+            if (null !== $publisher) {
+                $resultFilters['publisher'] = $publisher;
+            }
+        }
+
+        if (!empty($filters['creator_id'])) {
+            $creator = $this->creatorService->findOneById($filters['creator_id']);
+            if (null !== $creator) {
+                $resultFilters['creator'] = $creator;
+            }
+        }
+
+        return $resultFilters;
     }
 }

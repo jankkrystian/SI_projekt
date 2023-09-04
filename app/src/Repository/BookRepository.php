@@ -36,7 +36,7 @@ class BookRepository extends ServiceEntityRepository
      *
      * @constant int
      */
-    public const PAGINATOR_ITEMS_PER_PAGE = 5;
+    public const PAGINATOR_ITEMS_PER_PAGE = 10;
 
     /**
      * Constructor.
@@ -53,10 +53,47 @@ class BookRepository extends ServiceEntityRepository
      *
      * @return QueryBuilder Query builder
      */
-    public function queryAll(): QueryBuilder
+    public function queryAll(array $filters): QueryBuilder
     {
-        return $this->getOrCreateQueryBuilder()
+        $queryBuilder =  $this->getOrCreateQueryBuilder()
+            ->select(
+                'partial book.{id, title}',
+            'partial genre.{id, genreTitle}',
+            'partial publisher.{id, publisherTitle}',
+            'partial creator.{id, nick, name, surname}'
+            )
+            ->join('book.genre', 'genre')
+            ->join('book.publisher', 'publisher')
+            ->join('book.creator', 'creator')
             ->orderBy('book.title', 'DESC');
+        return $this->applyFiltersToList($queryBuilder, $filters);
+    }
+    /**
+     * Apply filters to paginated list.
+     *
+     * @param QueryBuilder          $queryBuilder Query builder
+     * @param array<string, object> $filters      Filters array
+     *
+     * @return QueryBuilder Query builder
+     */
+    private function applyFiltersToList(QueryBuilder $queryBuilder, array $filters = []): QueryBuilder
+    {
+        if (isset($filters['genre']) && $filters['genre'] instanceof Genre) {
+            $queryBuilder->andWhere('genre = :genre')
+                ->setParameter('genre', $filters['genre']);
+        }
+
+        if (isset($filters['publisher']) && $filters['publisher'] instanceof Publisher) {
+            $queryBuilder->andWhere('publisher = :publisher')
+                ->setParameter('publisher', $filters['publisher']);
+        }
+
+        if (isset($filters['creator']) && $filters['creator'] instanceof Creator) {
+            $queryBuilder->andWhere('creator = :creator')
+                ->setParameter('creator', $filters['creator']);
+        }
+
+        return $queryBuilder;
     }
 
     /**

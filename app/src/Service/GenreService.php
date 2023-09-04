@@ -94,5 +94,19 @@ class GenreService implements GenreServiceInterface
             return false;
         }
     }
+    // CategoryService.php
+    /**
+     * Find by id.
+     *
+     * @param int $id Genre id
+     *
+     * @return Genre|null Genre entity
+     *
+     * @throws NonUniqueResultException
+     */
+    public function findOneById(int $id): ?Genre
+    {
+        return $this->genreRepository->findOneById($id);
+    }
 
 }

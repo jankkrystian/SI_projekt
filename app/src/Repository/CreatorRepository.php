@@ -51,7 +51,7 @@ class CreatorRepository extends ServiceEntityRepository
     {
         return $this->getOrCreateQueryBuilder()
             ->select('partial creator.{id, nick, name, surname}')
-            ->orderBy('creator.surname', 'DESC');
+            ->orderBy('creator.id', 'DESC');
     }
 
     /**

@@ -51,7 +51,7 @@ class GenreRepository extends ServiceEntityRepository
     {
         return $this->getOrCreateQueryBuilder()
             ->select('partial genre.{id, genreTitle}')
-            ->orderBy('genre.genreTitle', 'DESC');
+            ->orderBy('genre.id', 'DESC');
     }
 
 

@@ -92,4 +92,18 @@ class PublisherService implements PublisherServiceInterface
             return false;
         }
     }
+    // CategoryService.php
+    /**
+     * Find by id.
+     *
+     * @param int $id Publisher id
+     *
+     * @return Publisher|null Publisher entity
+     *
+     * @throws NonUniqueResultException
+     */
+    public function findOneById(int $id): ?Publisher
+    {
+        return $this->publisherRepository->findOneById($id);
+    }
 }

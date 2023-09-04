@@ -38,9 +38,9 @@
             <tr>
                 <th>{{ knp_pagination_sortable(pagination, 'label.id'|trans, 'book.id') }}</th>
                 <th>{{ knp_pagination_sortable(pagination, 'label.title'|trans, 'book.title') }}</th>
-                <th>{{ 'label.genre.title'|trans }}</th>
-                <th>{{ 'label.publisher.title'|trans }}</th>
-                <th>{{ 'label.creator.surname'|trans }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.genre.genreTitle'|trans, 'genre.genreTitle') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.publisher.publisherTitle'|trans, 'publisher.publisherTitle') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.creator.surname'|trans, 'creator.surname') }}</th>
                 <th>{{ 'action.show'|trans }}</th>
                 <th>{{ 'action.edit'|trans }}</th>
                 <th>{{ 'action.delete'|trans }}</th>
@@ -52,9 +52,22 @@
                 <tr>
                     <td>{{ book.id }}</td>
                     <td>{{ book.title }}</td>
-                    <td>{{ book.genre.genreTitle }}</td>
-                    <td>{{ book.publisher.publisherTitle }}</td>
-                    <td>{{ book.creator.surname }}</td>
+
+                    <td>
+                        <a href="{{ url('book_index', {'filters.genre_id' : book.genre.id}) }}" title="{{ book.genre.genreTitle }}">
+                            {{ book.genre.genreTitle }}
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ url('book_index', {'filters.publisher_id' : book.publisher.id}) }}" title="{{ book.publisher.publisherTitle }}">
+                            {{ book.publisher.publisherTitle }}
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ url('book_index', {'filters.creator_id' : book.creator.id}) }}" title="{{ book.creator.surname }}">
+                            {{ book.creator.surname }}
+                        </a>
+                    </td>
                     <td>
                         <a href="{{ url('book_show', {id: book.id}) }}" title="{{'action.show'|trans}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{ 'action.show' | trans }}</a>
                     </td>

@@ -90,4 +90,18 @@ class CreatorService implements CreatorServiceInterface
             return false;
         }
     }
+    // CategoryService.php
+    /**
+     * Find by id.
+     *
+     * @param int $id Creator id
+     *
+     * @return Creator|null Genre entity
+     *
+     * @throws NonUniqueResultException
+     */
+    public function findOneById(int $id): ?Creator
+    {
+        return $this->creatorRepository->findOneById($id);
+    }
 }

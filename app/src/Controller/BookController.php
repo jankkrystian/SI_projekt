@@ -53,12 +53,34 @@ class BookController extends AbstractController
     #[Route(name: 'book_index', methods: 'GET')]
     public function index(Request $request): Response
     {
+        $filters = $this->getFilters($request);
         $pagination = $this->bookService->getPaginatedList(
-            $request->query->getInt('page', 1)
+            $request->query->getInt('page', 1),
+            $filters
         );
 
         return $this->render('book/index.html.twig', ['pagination' => $pagination]);
     }
+    // ...
+    /**
+     * Get filters from request.
+     *
+     * @param Request $request HTTP request
+     *
+     * @return array<string, int> Array of filters
+     *
+     * @psalm-return array{genre_id: int, tag_id: int, status_id: int}
+     */
+    private function getFilters(Request $request): array
+    {
+        $filters = [];
+        $filters['genre_id'] = $request->query->getInt('filters_genre_id');
+        $filters['publisher_id'] = $request->query->getInt('filters_publisher_id');
+        $filters['creator_id'] = $request->query->getInt('filters_creator_id');
+
+        return $filters;
+    }
+
 
     /**
      * Show action.

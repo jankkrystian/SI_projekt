@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\BookRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -17,7 +18,6 @@ class Book
 
     #[ORM\Column(length: 255)]
     private ?string $title = null;
-
 
 
     /**
@@ -41,6 +41,10 @@ class Book
     #[ORM\ManyToOne(targetEntity: Creator::class)]
     #[ORM\JoinColumn(nullable: false)]
     private ?Creator $creator = null;
+
+    #[ORM\ManyToOne]
+    private ?User $author = null;
+    
 
     public function getId(): ?int
     {
@@ -93,4 +97,17 @@ class Book
 
         return $this;
     }
+
+    public function getAuthor(): ?User
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?User $author): static
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
 }
