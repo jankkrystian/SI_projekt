@@ -52,7 +52,7 @@
       </trans-unit>
       <trans-unit id="label.creator.surname">
         <source>label.creator.surname</source>
-        <target>Author</target>
+        <target>Creator</target>
       </trans-unit>
       <trans-unit id="message.empty_list">
         <source>message.empty_list</source>
@@ -213,6 +213,10 @@
       <trans-unit id="title.reservation_delete">
         <source>title.reservation_delete</source>
         <target>Delete this reservation!</target>
+      </trans-unit>
+      <trans-unit id="title.book_create">
+        <source>title.book_create</source>
+        <target>Create a new book!</target>
       </trans-unit>
     </body>
   </file>

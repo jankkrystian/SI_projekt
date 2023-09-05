@@ -48,8 +48,8 @@ class BookType extends AbstractType
                 'choice_label'=>function ($genre): string {
                 return $genre->getGenreTitle();
                 },
-                'label'=>'label_genre',
-                'placeholder'=>'label.genre',
+                'label'=>'label.genreTitle',
+                'placeholder'=>'genre',
                 'required'=>true,
 
             ]
@@ -61,8 +61,8 @@ class BookType extends AbstractType
                     'choice_label'=>function ($publisher): string {
                         return $publisher->getPublisherTitle();
                     },
-                    'label'=>'label_publisher',
-                    'placeholder'=>'label.publisher',
+                    'label'=>'label.publisherTitle',
+                    'placeholder'=>'publisher',
                     'required'=>true,
 
                 ]
@@ -74,8 +74,8 @@ class BookType extends AbstractType
                     'choice_label'=>function ($creator): string {
                         return $creator->getNick();
                     },
-                    'label'=>'label_creator',
-                    'placeholder'=>'label.creator',
+                    'label'=>'label.creator.nick',
+                    'placeholder'=>'nick',
                     'required'=>true,
 
                 ]

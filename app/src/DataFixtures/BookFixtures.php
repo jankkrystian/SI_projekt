@@ -48,6 +48,9 @@ class BookFixtures extends AbstractBaseFixtures implements DependentFixtureInter
             $creator = $this->getRandomReference('creators');
             $book->setCreator($creator);
 
+            /** @var User $author */
+            $author = $this->getRandomReference('admins');
+            $book->setAuthor($author);
 
             return $book;
         });
@@ -61,11 +64,11 @@ class BookFixtures extends AbstractBaseFixtures implements DependentFixtureInter
      *
      * @return string[] of dependencies
      *
-     * @psalm-return array{0: GenreFixtures::class, 1: PublisherFixtures::class, 2:CreatorFixtures::class}
+     * @psalm-return array{0: GenreFixtures::class, 1: PublisherFixtures::class, 2:CreatorFixtures::class, 3:UserFixtures::class}
      */
     public function getDependencies(): array
     {
-        return [GenreFixtures::class, PublisherFixtures::class, CreatorFixtures::class];
+        return [GenreFixtures::class, PublisherFixtures::class, CreatorFixtures::class, UserFixtures::class];
     }
 
 }

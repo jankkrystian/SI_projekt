@@ -5,10 +5,16 @@
 {% endblock %}
 
 {% block body %}
+    <body>
+    <div class="container">
+    <div class="row">
     {% include 'default/_form.html.twig' with {
         page_title: 'genreTitle.genre_create'|trans,
         form: form,
         submit_label: 'action.save'|trans,
         back_to_list_path: 'genre_index',
     } %}
+    </div>
+    </div>
+    </body>
 {% endblock %}

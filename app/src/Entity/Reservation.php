@@ -25,7 +25,7 @@ class Reservation
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $note = null;
 
-    #[ORM\ManyToOne]
+    #[ORM\ManyToOne (targetEntity:Book::class, fetch: 'EXTRA_LAZY')]
     private ?Book $book = null;
 
     public function getId(): ?int

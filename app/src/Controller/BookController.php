@@ -114,12 +114,20 @@ class BookController extends AbstractController
     )]
     public function create(Request $request): Response
     {
+        /** @var User $user */
+        $user = $this->getUser();
         $book = new Book();
+        $book->setAuthor($user);
         $form = $this->createForm(BookType::class, $book);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->bookService->save($book);
+
+            $this->addFlash(
+                'success',
+                $this->translator->trans('message.added_successfully')
+            );
 
             return $this->redirectToRoute('book_index');
         }
@@ -155,7 +163,7 @@ class BookController extends AbstractController
 
             $this->addFlash(
                 'success',
-                $this->translator->trans('message.added_success')
+                $this->translator->trans('message.added_successfully')
             );
 
             return $this->redirectToRoute('book_index');

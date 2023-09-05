@@ -18,6 +18,8 @@
             <dd>{{  book.creator.nick }}</dd>
             <dt>{{ 'label.publisher'|trans }}</dt>
             <dd>{{  book.publisher.publisherTitle }}</dd>
+            <dt>{{ 'label.author'|trans }}</dt>
+            <dd>{{  book.author.email }}</dd>
         </dl>
         <p>
             <a href="{{ url('book_index') }}" title="{{ 'action.back_to_list'|trans }}">

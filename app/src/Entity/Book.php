@@ -25,7 +25,7 @@ class Book
      *
      * @var Genre
      */
-    #[ORM\ManyToOne(targetEntity: Genre::class)]
+    #[ORM\ManyToOne(targetEntity: Genre::class, fetch: 'EXTRA_LAZY')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Genre $genre = null;
 
@@ -34,15 +34,23 @@ class Book
      *
      * @var Publisher
      */
-    #[ORM\ManyToOne(targetEntity: Publisher::class)]
+    #[ORM\ManyToOne(targetEntity: Publisher::class, fetch: 'EXTRA_LAZY')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Publisher $publisher = null;
 
-    #[ORM\ManyToOne(targetEntity: Creator::class)]
+    #[ORM\ManyToOne(targetEntity: Creator::class, fetch: 'EXTRA_LAZY')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Creator $creator = null;
 
-    #[ORM\ManyToOne]
+    /**
+     * Author.
+     *
+     * @var User|null
+     */
+    #[ORM\ManyToOne(targetEntity: User::class, fetch: 'EXTRA_LAZY')]
+    #[ORM\JoinColumn(nullable: false)]
+    #[Assert\NotBlank]
+    #[Assert\Type(User::class)]
     private ?User $author = null;
     
 

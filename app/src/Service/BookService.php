@@ -78,6 +78,7 @@ class BookService implements BookServiceInterface
             BookRepository::PAGINATOR_ITEMS_PER_PAGE
         );
     }
+
     /**
      * Save entity.
      *
