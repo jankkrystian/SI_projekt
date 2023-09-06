@@ -1,20 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ 'genreTitle.genre_create'|trans }}
+    {{ 'title.genre_create'|trans }}
 {% endblock %}
 
 {% block body %}
-    <body>
     <div class="container">
     <div class="row">
     {% include 'default/_form.html.twig' with {
-        page_title: 'genreTitle.genre_create'|trans,
+        page_title: 'title.genre_create'|trans,
         form: form,
         submit_label: 'action.save'|trans,
         back_to_list_path: 'genre_index',
     } %}
     </div>
     </div>
-    </body>
+    {%  include 'footer.html.twig' %}
 {% endblock %}

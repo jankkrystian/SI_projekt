@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ 'Kontakt'|trans }}
+    {{ 'title.contact'|trans }}
 {% endblock %}
     {% block stylesheets %}
         {% include 'navbar.html.twig' %}
@@ -19,16 +19,13 @@
 
     <div class="container text-center">
     <div class="row align-items-end">
-        <h1>{{ 'Kontakt'|trans }}</h1>
+        <h1>{{ 'title.contact'|trans }}</h1>
         <div class="col">
             <div class="supermain">
-
-                <p>adres mailowy</p>
-                <p>tutaj numer telefonu</p>
-                <p>pracujemy od poniedziałku do piątku, w godzinach od 9 do 16</p>
-                <p>a tutaj adres odziału centralnego</p>
+                <p>{{ 'text'|trans }}</p>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d163976.4838357467!2d19.69307595732998!3d50.04634802156544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471644c0354e18d1%3A0xb46bb6b576478abf!2zS3Jha8Ozdw!5e0!3m2!1spl!2spl!4v1690638780584!5m2!1spl!2spl" width="800" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
+    </div>
     </div>
     </div>
     {%  include 'footer.html.twig' %}

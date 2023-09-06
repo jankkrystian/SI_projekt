@@ -5,11 +5,15 @@
 {% endblock %}
 
 {% block body %}
+    <div class="container">
+    <div class="row">
     {% include 'default/_form.html.twig' with {
         page_title: 'genreTitle.genre_delete'|trans({'%id%': genre.id|default('')}),
         form: form,
         submit_label: 'action.delete'|trans,
         back_to_list_path: 'genre_index',
     } %}
-
+    </div>
+    </div>
+    {%  include 'footer.html.twig' %}
 {% endblock %}

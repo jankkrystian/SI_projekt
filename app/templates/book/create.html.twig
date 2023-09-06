@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block body %}
-    <body>
     <div class="container">
         <div class="row">
             {% include 'default/_form.html.twig' with {
@@ -14,8 +13,7 @@
                 submit_label: 'action.save'|trans,
                 back_to_list_path: 'book_index',
             } %}
-            <video controls> <source src="https://media.istockphoto.com/id/1278307381/pl/filmy/szcz%C4%99%C5%9Bliwy-ch%C5%82opiec-czytaj%C4%85cy-emocjonalnie-ksi%C4%85%C5%BCk%C4%99-w-pi%C5%BCamie-pies-jack-russell-le%C5%BC%C4%85cego-%C5%82%C3%B3%C5%BCka.mp4?s=mp4-640x640-is&k=20&c=TxTppcb6iVOzAfv82k3d_y3wSpQ2ZB_zxTO_qAgR5MQ=" type="video/mp4"/></video>
         </div>
     </div>
-    </body>
+    {%  include 'footer.html.twig' %}
 {% endblock %}

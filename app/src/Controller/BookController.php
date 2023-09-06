@@ -95,6 +95,7 @@ class BookController extends AbstractController
         requirements: ['id' => '[1-9]\d*'],
         methods: 'GET'
     )]
+    #[IsGranted('VIEW', subject: 'book')]
     public function show(Book $book): Response
     {
         return $this->render('book/show.html.twig', ['book' => $book]);
@@ -146,6 +147,7 @@ class BookController extends AbstractController
      * @return Response HTTP response
      */
     #[Route('/{id}/edit', name: 'book_edit', requirements: ['id' => '[1-9]\d*'], methods: 'GET|PUT')]
+    #[IsGranted('EDIT', subject: 'book')]
     public function edit(Request $request, Book $book): Response
     {
         $form = $this->createForm(
@@ -186,6 +188,7 @@ class BookController extends AbstractController
      * @return Response HTTP response
      */
     #[Route('/{id}/delete', name: 'book_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
+    #[IsGranted('DELETE', subject: 'book')]
     public function delete(Request $request, Book $book): Response
     {
         $form = $this->createForm(FormType::class, $book, [

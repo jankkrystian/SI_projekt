@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block body %}
+
     <h1>{{ 'title.genre_details'|trans({'%id%': genre.id|default('')}) }}</h1>
     {% if genre is defined and genre|length %}
         <dl class="dl-horizontal">
@@ -23,4 +24,5 @@
             {{ 'message.record_not_found'|trans }}
         </p>
     {% endif %}
+    {%  include 'footer.html.twig' %}
 {% endblock %}

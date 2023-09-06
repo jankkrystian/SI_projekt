@@ -79,7 +79,7 @@ class ReservationController extends AbstractController
     public function show(Reservation $reservation): Response
     {
         return $this->render(
-            'reservation/create.html.twig',
+            'reservation/show.html.twig',
             ['reservation' => $reservation]
         );
     }

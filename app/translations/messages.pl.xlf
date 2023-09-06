@@ -10,6 +10,10 @@
         <source>welcome.title</source>
         <target>Hej biblioteko!</target>
       </trans-unit>
+      <trans-unit id="label.actions">
+        <source>label.actions</source>
+        <target>Pokaż</target>
+      </trans-unit>
       <trans-unit id="label.id">
         <source>label.id</source>
         <target>Id</target>
@@ -20,11 +24,11 @@
       </trans-unit>
       <trans-unit id="label.content">
         <source>label.content</source>
-        <target>Zawartość</target>
+        <target>Kontent</target>
       </trans-unit>
       <trans-unit id="label.tags">
         <source>label.tags</source>
-        <target>Tagi</target>
+        <target>Tags</target>
       </trans-unit>
       <trans-unit id="label.nick">
         <source>label.nick</source>
@@ -38,25 +42,25 @@
         <source>label.surname</source>
         <target>Nazwisko</target>
       </trans-unit>
-      <trans-unit id="label.genre.title">
-        <source>label.genre.title</source>
-        <target>Tytuł</target>
+      <trans-unit id="label.genre.genreTitle">
+        <source>label.genre.genreTitle</source>
+        <target>Gatunek</target>
       </trans-unit>
-      <trans-unit id="label.publisher.title">
-        <source>label.publisher.title</source>
-        <target>Wydawnictwo</target>
+      <trans-unit id="label.publisher.publisherTitle">
+        <source>label.publisher.publisherTitle</source>
+        <target>Wydawca</target>
       </trans-unit>
       <trans-unit id="label.creator.surname">
         <source>label.creator.surname</source>
-        <target>Autor</target>
+        <target>Twórca</target>
       </trans-unit>
       <trans-unit id="message.empty_list">
         <source>message.empty_list</source>
-        <target>List jest pusta.</target>
+        <target>Lista jest pusta.</target>
       </trans-unit>
       <trans-unit id="message.record_not_found">
         <source>message.record_not_found</source>
-        <target>Record not found.</target>
+        <target>Nie znaleziono.</target>
       </trans-unit>
       <trans-unit id="title.record_list">
         <source>title.record_list</source>
@@ -68,15 +72,15 @@
       </trans-unit>
       <trans-unit id="message.added_success">
       <source>message.added_success</source>
-      <target>Dobra robota, dodano!!</target>
+      <target>Udało się dodać!</target>
       </trans-unit>
       <trans-unit id="message.deleted_successfully">
        <source>message.deleted_successfully</source>
-      <target>Dobra robota, usunięto!</target>
+      <target>Udało się usunąć!</target>
       </trans-unit>
       <trans-unit id="action.back_to_list">
         <source>action.back_to_list</source>
-        <target>Chcę wrócić</target>
+        <target>Powrót</target>
       </trans-unit>
       <trans-unit id="action.show">
         <source>action.show</source>
@@ -84,23 +88,27 @@
       </trans-unit>
       <trans-unit id="action.save">
         <source>action.save</source>
-        <target>Chcę zapisać</target>
+        <target>Chcę to zapisać!</target>
       </trans-unit>
       <trans-unit id="action.create">
         <source>action.create</source>
-        <target>Stwórz!</target>
+        <target>Stwórz</target>
+      </trans-unit>
+      <trans-unit id="action.borrow">
+        <source>action.borrow</source>
+        <target>Wypożycz</target>
       </trans-unit>
       <trans-unit id="action.edit">
         <source>action.edit</source>
-        <target>Chcę edytować</target>
+        <target>Edytuj</target>
       </trans-unit>
       <trans-unit id="action.delete">
         <source>action.delete</source>
-        <target>Chcę usunąć</target>
+        <target>Usuń</target>
       </trans-unit>
       <trans-unit id="title.genre_details">
         <source>title.genre_details</source>
-        <target>Szczegóły na temat gatunku</target>
+        <target>Informacje na temat gatunku</target>
       </trans-unit>
       <trans-unit id="title.genre_create">
         <source>title.genre_create</source>
@@ -116,11 +124,11 @@
       </trans-unit>
       <trans-unit id="title.publisher_details">
         <source>title.publisher_details</source>
-        <target>Szczegóły na temat wydawnictwa</target>
+        <target>Informacje na temat wydawnictwa</target>
       </trans-unit>
       <trans-unit id="title.publisher_create">
         <source>title.publisher_create</source>
-        <target>Stwórz nowe wydawnictwo!</target>
+        <target>Dodaj nowe wydawnictwo!</target>
       </trans-unit>
       <trans-unit id="title.publisher_edit">
         <source>title.publisher_edit</source>
@@ -132,39 +140,123 @@
       </trans-unit>
       <trans-unit id="title.creator_details">
         <source>title.creator_details</source>
-        <target>Szczegóły na temat autora</target>
+        <target>Informacje na temat twórcy</target>
       </trans-unit>
       <trans-unit id="nick.creator_create">
         <source>nick.creator_create</source>
-        <target>Stwórz nowego autora!</target>
+        <target>Dodaj nowego twórcę!</target>
       </trans-unit>
       <trans-unit id="title.creator_edit">
         <source>title.creator_edit</source>
-        <target>Edytuj autora!</target>
+        <target>Edytuj twórcę!</target>
       </trans-unit>
       <trans-unit id="title.creator_delete">
         <source>title.creator_delete</source>
-        <target>Usuń autora!</target>
+        <target>Usuń twórcę!</target>
       </trans-unit>
       <trans-unit id="message.publisher_contains_books">
         <source>message.publisher_contains_books</source>
-        <target>Nie można usunąć, wydawnictwo w użyciu książki!</target>
+        <target>Nie można usunąć, ponieważ niektóre z książek zawierają tego wydawcę.</target>
       </trans-unit>
       <trans-unit id="message.genre_contains_books">
         <source>message.genre_contains_books</source>
-        <target>Nie można usunąć, gatunek w użyciu książki!</target>
+        <target>Nie można usunąć, ponieważ niektóre z książek zawierają ten gatunek.</target>
       </trans-unit>
       <trans-unit id="message.creator_contains_books">
         <source>message.creator_contains_books</source>
-        <target>Nie można usunąć, autor w użyciu książki!</target>
+        <target>Nie można usunąć, ponieważ niektóre z książek zawierają tego twórcę.</target>
       </trans-unit>
       <trans-unit id="title.book_delete">
         <source>title.book_delete</source>
         <target>Usuń książkę!</target>
       </trans-unit>
+      <trans-unit id="action.login">
+        <source>action.login</source>
+        <target>Login</target>
+      </trans-unit>
+      <trans-unit id="action.logout">
+        <source>action.logout</source>
+        <target>Logout</target>
+      </trans-unit>
       <trans-unit id="language.text">
         <source>language.text</source>
-        <target>opis opis opis</target>
+        <target>W ofercie posiadamy również pomoce w nauce języków pod postacią książek, komiksów oraz audiobooków w innych językach! Obecnie w ofercie 10 do wyboru.</target>
+      </trans-unit>
+        <trans-unit id="about.text">
+        <source>about.text</source>
+        <target>Tak, jest to internetowa wypożyczalnia. Wejdź, oglądaj i zanurz się w świecie czytelniczym (lub audiobookowym, jeśli preferujesz tę opcję)! Możesz przejrzeć co mamy w ofercie, zarezerwować, a w razie pytań skontaktować się z nami za pomocą telefonu lub maila.</target>
+      </trans-unit>
+      <trans-unit id="label.email">
+        <source>label.email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="label.note">
+        <source>label.note</source>
+        <target>Uwaga</target>
+      </trans-unit>
+      <trans-unit id="label.book.id">
+        <source>label.book.id</source>
+        <target>Id książki</target>
+      </trans-unit>
+      <trans-unit id="title.reservation_list">
+        <source>title.reservation_list</source>
+        <target>Książki, które obecnie są zarezerwowane</target>
+      </trans-unit>
+      <trans-unit id="label.password">
+        <source>label.password</source>
+        <target>Hasło</target>
+      </trans-unit>
+      <trans-unit id="title.user_list">
+        <source>title.user_list</source>
+        <target>Lista użytkowników</target>
+      </trans-unit>
+      <trans-unit id="title.create_reservation">
+        <source>title.create_reservation</source>
+        <target>Utwórz rezerwację!</target>
+      </trans-unit>
+      <trans-unit id="title.reservation_delete">
+        <source>title.reservation_delete</source>
+        <target>Usuń tę rezerwację!</target>
+      </trans-unit>
+      <trans-unit id="title.book_create">
+        <source>title.book_create</source>
+        <target>Dodaj nową książkę!</target>
+      </trans-unit>
+      <trans-unit id="title.contact">
+        <source>title.contact</source>
+        <target>Kontakt</target>
+      </trans-unit>
+      <trans-unit id="text">
+        <source>text</source>
+        <target>email: patrycja.goldys@gmail.com, tel.: 012-345-678</target>
+      </trans-unit>
+      <trans-unit id="books">
+        <source>books</source>
+        <target>książki</target>
+      </trans-unit>
+      <trans-unit id="comics">
+        <source>comics</source>
+        <target>komiksy</target>
+      </trans-unit>
+      <trans-unit id="audiobooks">
+        <source>audiobooks</source>
+        <target>audiobooki</target>
+      </trans-unit>
+      <trans-unit id="offer.text">
+        <source>offer.text</source>
+        <target>A co możemy zaoferować?</target>
+      </trans-unit>
+      <trans-unit id="label.book.author">
+        <source>label.book.author</source>
+        <target>Kto dodał książkę</target>
+      </trans-unit>
+      <trans-unit id="label.genreTitle">
+        <source>label.genreTitle</source>
+        <target>Nazwa gatunku</target>
+      </trans-unit>
+      <trans-unit id="label.publisherTitle">
+        <source>label.publisherTitle</source>
+        <target>Nazwa wydawcy</target>
       </trans-unit>
     </body>
   </file>

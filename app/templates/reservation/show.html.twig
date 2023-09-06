@@ -19,12 +19,12 @@
                     <dd>{{ reservation.nick }}</dd>
                     <dt>{{ 'label.note'|trans }}</dt>
                     <dd>{{ reservation.note }}</dd>
-                    <dt>{{ 'label.book_id'|trans }}</dt>
+                    <dt>{{ 'label.book.id'|trans }}</dt>
                     <dd>{{ reservation.book.id }}</dd>
                     <dt>{{ 'label.actions'|trans }}</dt>
                     <dd>
-                        <a class="btn btn-outline-warning me-2 mt-2" href="{{ url('reservation_delete', {id: reservation.id}) }}" title="{{ 'action.resolve'|trans }}">
-                            {{ 'action.resolve'|trans }}
+                        <a class="btn btn-outline-warning me-2 mt-2" href="{{ url('reservation_index', {id: reservation.id}) }}" title="{{ 'action.index'|trans }}">
+                            {{ 'action.index'|trans }}
                         </a>
 
                     </dd>
@@ -38,5 +38,5 @@
         </div>
     </div>
     </body>
-
+    {%  include 'footer.html.twig' %}
 {% endblock %}

@@ -54,6 +54,10 @@
         <source>label.creator.surname</source>
         <target>Creator</target>
       </trans-unit>
+      <trans-unit id="label.creator.nick">
+        <source>label.creator.nick</source>
+        <target>Creator nick</target>
+      </trans-unit>
       <trans-unit id="message.empty_list">
         <source>message.empty_list</source>
         <target>List is empty.</target>
@@ -112,7 +116,7 @@
       </trans-unit>
       <trans-unit id="title.genre_create">
         <source>title.genre_create</source>
-        <target>Create new genre!</target>
+        <target>Create a new genre!</target>
       </trans-unit>
       <trans-unit id="title.genre_edit">
         <source>title.genre_edit</source>
@@ -128,7 +132,7 @@
       </trans-unit>
       <trans-unit id="title.publisher_create">
         <source>title.publisher_create</source>
-        <target>Create new publisher!</target>
+        <target>Create a new publisher!</target>
       </trans-unit>
       <trans-unit id="title.publisher_edit">
         <source>title.publisher_edit</source>
@@ -144,7 +148,7 @@
       </trans-unit>
       <trans-unit id="nick.creator_create">
         <source>nick.creator_create</source>
-        <target>Create new creator!</target>
+        <target>Create a new creator!</target>
       </trans-unit>
       <trans-unit id="title.creator_edit">
         <source>title.creator_edit</source>
@@ -168,7 +172,11 @@
       </trans-unit>
       <trans-unit id="title.book_delete">
         <source>title.book_delete</source>
-        <target>Delete a book!</target>
+        <target>Delete the book!</target>
+      </trans-unit>
+      <trans-unit id="title.book_edit">
+        <source>title.book_edit</source>
+        <target>Edit the book!</target>
       </trans-unit>
       <trans-unit id="action.login">
         <source>action.login</source>
@@ -180,7 +188,11 @@
       </trans-unit>
       <trans-unit id="language.text">
         <source>language.text</source>
-        <target>some funny description in English</target>
+        <target>We can also offer a wide range of language learning material such as books, comics and audiobooks in different languages! Currently 10 in our disposal.</target>
+      </trans-unit>
+        <trans-unit id="about.text">
+        <source>about.text</source>
+        <target>Yes, it is an online library. Come on and explore the wonderful world of reading (or listening too, in case you prefer audiobooks, which is also OK)! You can see what books we have in our offer, reserve them and, in case you have some question, call or contact us via email. </target>
       </trans-unit>
       <trans-unit id="label.email">
         <source>label.email</source>
@@ -208,7 +220,7 @@
       </trans-unit>
       <trans-unit id="title.create_reservation">
         <source>title.create_reservation</source>
-        <target>Create new reservation!</target>
+        <target>Create a new reservation!</target>
       </trans-unit>
       <trans-unit id="title.reservation_delete">
         <source>title.reservation_delete</source>
@@ -217,6 +229,42 @@
       <trans-unit id="title.book_create">
         <source>title.book_create</source>
         <target>Create a new book!</target>
+      </trans-unit>
+      <trans-unit id="title.contact">
+        <source>title.contact</source>
+        <target>Contact</target>
+      </trans-unit>
+      <trans-unit id="text">
+        <source>text</source>
+        <target>email: patrycja.goldys@gmail.com, phone: 012-345-678</target>
+      </trans-unit>
+      <trans-unit id="books">
+        <source>books</source>
+        <target>books</target>
+      </trans-unit>
+      <trans-unit id="comics">
+        <source>comics</source>
+        <target>comics</target>
+      </trans-unit>
+      <trans-unit id="audiobooks">
+        <source>audiobooks</source>
+        <target>audiobooks</target>
+      </trans-unit>
+      <trans-unit id="offer.text">
+        <source>offer.text</source>
+        <target>And what can we offer?</target>
+      </trans-unit>
+      <trans-unit id="label.book.author">
+        <source>label.book.author</source>
+        <target>Who's added a book</target>
+      </trans-unit>
+      <trans-unit id="label.genreTitle">
+        <source>label.genreTitle</source>
+        <target>Genre name</target>
+      </trans-unit>
+      <trans-unit id="label.publisherTitle">
+        <source>label.publisherTitle</source>
+        <target>Publisher name</target>
       </trans-unit>
     </body>
   </file>

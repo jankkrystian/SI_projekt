@@ -54,7 +54,7 @@ class UserController extends AbstractController
      *
      * @return Response HTTP response
      */
-    #[Route(name: '/user', methods: 'GET')]
+    #[Route(name: 'user_index', methods: 'GET')]
     public function index(Request $request): Response
     {
         $pagination = $this->userService->getPaginatedList(
