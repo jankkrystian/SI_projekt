@@ -10,6 +10,30 @@
         <source>welcome.title</source>
         <target>Hello library!</target>
       </trans-unit>
+      <trans-unit id="title.genre_list">
+        <source>title.genre_list</source>
+        <target>Genres</target>
+      </trans-unit>
+      <trans-unit id="title.publisher_list">
+        <source>title.publisher_list</source>
+        <target>Publishers</target>
+      </trans-unit>
+      <trans-unit id="title.creator_list">
+        <source>title.creator_list</source>
+        <target>Creators</target>
+      </trans-unit>
+      <trans-unit id="title.book_list">
+        <source>title.book_list</source>
+        <target>Books</target>
+      </trans-unit>
+      <trans-unit id="title.contact">
+        <source>title.contact</source>
+        <target>Contact</target>
+      </trans-unit>
+      <trans-unit id="title.reservation_list">
+        <source>title.reservation_list</source>
+        <target>Reservations</target>
+      </trans-unit>
       <trans-unit id="label.actions">
         <source>label.actions</source>
         <target>Show</target>
@@ -206,10 +230,6 @@
         <source>label.book.id</source>
         <target>Book's id</target>
       </trans-unit>
-      <trans-unit id="title.reservation_list">
-        <source>title.reservation_list</source>
-        <target>Books that are reserved at the moment</target>
-      </trans-unit>
       <trans-unit id="label.password">
         <source>label.password</source>
         <target>Password</target>
@@ -229,10 +249,6 @@
       <trans-unit id="title.book_create">
         <source>title.book_create</source>
         <target>Create a new book!</target>
-      </trans-unit>
-      <trans-unit id="title.contact">
-        <source>title.contact</source>
-        <target>Contact</target>
       </trans-unit>
       <trans-unit id="text">
         <source>text</source>

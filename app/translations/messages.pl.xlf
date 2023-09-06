@@ -10,6 +10,30 @@
         <source>welcome.title</source>
         <target>Hej biblioteko!</target>
       </trans-unit>
+      <trans-unit id="title.genre_list">
+        <source>title.genre_list</source>
+        <target>Gatunki</target>
+      </trans-unit>
+      <trans-unit id="title.publisher_list">
+        <source>title.publisher_list</source>
+        <target>Wydawnictwa</target>
+      </trans-unit>
+      <trans-unit id="title.creator_list">
+        <source>title.creator_list</source>
+        <target>Twórcy</target>
+      </trans-unit>
+      <trans-unit id="title.book_list">
+        <source>title.book_list</source>
+        <target>Książki</target>
+      </trans-unit>
+      <trans-unit id="title.contact">
+        <source>title.contact</source>
+        <target>Kontakt</target>
+      </trans-unit>
+      <trans-unit id="title.reservation_list">
+        <source>title.reservation_list</source>
+        <target>Rezerwacje</target>
+      </trans-unit>
       <trans-unit id="label.actions">
         <source>label.actions</source>
         <target>Pokaż</target>
@@ -48,7 +72,7 @@
       </trans-unit>
       <trans-unit id="label.publisher.publisherTitle">
         <source>label.publisher.publisherTitle</source>
-        <target>Wydawca</target>
+        <target>Wydawnictwo</target>
       </trans-unit>
       <trans-unit id="label.creator.surname">
         <source>label.creator.surname</source>
@@ -156,7 +180,7 @@
       </trans-unit>
       <trans-unit id="message.publisher_contains_books">
         <source>message.publisher_contains_books</source>
-        <target>Nie można usunąć, ponieważ niektóre z książek zawierają tego wydawcę.</target>
+        <target>Nie można usunąć, ponieważ niektóre z książek zawierają to wydawnictwo.</target>
       </trans-unit>
       <trans-unit id="message.genre_contains_books">
         <source>message.genre_contains_books</source>
@@ -198,10 +222,6 @@
         <source>label.book.id</source>
         <target>Id książki</target>
       </trans-unit>
-      <trans-unit id="title.reservation_list">
-        <source>title.reservation_list</source>
-        <target>Książki, które obecnie są zarezerwowane</target>
-      </trans-unit>
       <trans-unit id="label.password">
         <source>label.password</source>
         <target>Hasło</target>
@@ -221,10 +241,6 @@
       <trans-unit id="title.book_create">
         <source>title.book_create</source>
         <target>Dodaj nową książkę!</target>
-      </trans-unit>
-      <trans-unit id="title.contact">
-        <source>title.contact</source>
-        <target>Kontakt</target>
       </trans-unit>
       <trans-unit id="text">
         <source>text</source>
@@ -256,7 +272,7 @@
       </trans-unit>
       <trans-unit id="label.publisherTitle">
         <source>label.publisherTitle</source>
-        <target>Nazwa wydawcy</target>
+        <target>Nazwa wydawnictwa</target>
       </trans-unit>
     </body>
   </file>
