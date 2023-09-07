@@ -124,7 +124,7 @@
       </trans-unit>
       <trans-unit id="action.borrow">
         <source>action.borrow</source>
-        <target>Borrow</target>
+        <target>Borrow and return</target>
       </trans-unit>
       <trans-unit id="action.edit">
         <source>action.edit</source>
@@ -252,7 +252,7 @@
       </trans-unit>
       <trans-unit id="title.create_reservation">
         <source>title.create_reservation</source>
-        <target>Create a new reservation!</target>
+        <target>Create a new reservation or return!</target>
       </trans-unit>
       <trans-unit id="title.reservation_delete">
         <source>title.reservation_delete</source>
@@ -260,7 +260,7 @@
       </trans-unit>
       <trans-unit id="title.reservation_details">
         <source>title.reservation_details</source>
-        <target>Some details aboout the reservation</target>
+        <target>Some details about the reservation</target>
       </trans-unit>
       <trans-unit id="title.book_create">
         <source>title.book_create</source>

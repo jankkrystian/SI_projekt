@@ -110,7 +110,7 @@ class ReservationController extends AbstractController
                 $this->translator->trans('message.added_success')
             );
 
-            return $this->redirectToRoute('reservation_index');
+            return $this->redirectToRoute('book_index');
         }
 
         return $this->render(
