@@ -13,13 +13,11 @@
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        {{ knp_pagination_sortable(pagination, 'label.id'|trans, 'reservation.id') }}</th>
-                        <th style="width: 15%">{{ knp_pagination_sortable(pagination, 'label.email'|trans, 'reservation.email') }}</th>
-                        <th style="width: 15%">{{ knp_pagination_sortable(pagination, 'label.nick'|trans, 'reservation.nick') }}</th>
-                        <th style="width: 30%">{{ knp_pagination_sortable(pagination, 'label.note'|trans, 'reservation.note') }}</th>
-                        <th style="width: 10%">{{ knp_pagination_sortable(pagination, 'label.book.id'|trans, 'book.id') }}</th>
-                        <th class="text-center" style="width: 20%">{{ 'action.show'|trans }}</th>
-                        <th class="text-center" style="width: 20%">{{ 'action.show'|trans }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'label.id'|trans, 'reservation.id') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'label.email'|trans, 'reservation.email') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'label.nick'|trans, 'reservation.nick') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'label.note'|trans, 'reservation.note') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'label.book.id'|trans, 'book.id') }}</th>
 
                     </tr>
                     </thead>
@@ -31,12 +29,13 @@
                             <td>{{ reservation.nick }}</td>
                             <td>{{ reservation.note }}</td>
                             <td>{{ reservation.book.id }}</td>
-                            <td class="text-center">
-                                <a class="btn btn-outline-primary me-2" href="{{ url('reservation_show', {id: reservation.id}) }}" title="{{ 'action.show'|trans }}">
-                                    {{ 'action.show'|trans }}
+                            <td>
+                            <td>
+                                <a href="{{ url('reservation_show', {id: reservation.id}) }}" title="{{'action.show'|trans}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{ 'action.show' | trans }}
                                 </a>
-                                <a class="btn btn-outline-danger" href="{{ url('reservation_delete', {id: reservation.id}) }}" title="{{ 'action.delete'|trans }}">
-                                    {{ 'action.delete'|trans }}
+                            </td>
+                            <td>
+                                <a href="{{ url('reservation_delete', {id: reservation.id}) }}" title="{{'action.delete'|trans}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{ 'action.delete' | trans }}
                                 </a>
                             </td>
                         </tr>

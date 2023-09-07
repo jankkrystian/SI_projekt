@@ -16,10 +16,6 @@
                         <th>{{ knp_pagination_sortable(pagination, 'label.id'|trans, 'user.id') }}</th>
                         <th>{{ knp_pagination_sortable(pagination, 'label.email'|trans, 'user.email') }}</th>
                         <th>{{ knp_pagination_sortable(pagination, 'label.password'|trans, 'user.password') }}</th>
-                        <th>{{ 'action.edit'|trans }}</th>
-                        <th>{{ 'action.edit'|trans }}</th>
-
-
                     </tr>
                     </thead>
                     <tbody>
@@ -29,13 +25,11 @@
                             <td>{{ user.email }}</td>
                             <td>{{ user.password }}</td>
                             <td>
-                                <a class="btn btn-outline-info me-2" href="{{ url('user_edit_email', {id: user.id}) }}" title="{{ 'action.edit_email'|trans }}">
-                                    {{ 'action.edit_email'|trans }}
+                                <a href="{{ url('user_edit_email', {id: user.id}) }}" title="{{'action.edit_email'|trans}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{ 'action.edit_email' | trans }}
                                 </a>
                             </td>
                             <td>
-                                <a class="btn btn-outline-info me-2" href="{{ url('user_edit_password', {id: user.id}) }}" title="{{ 'action.edit_password'|trans }}">
-                                    {{ 'action.edit_password'|trans }}
+                                <a href="{{ url('user_edit_password', {id: user.id}) }}" title="{{'action.edit_password'|trans}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{ 'action.edit_password' | trans }}
                                 </a>
                             </td>
                         </tr>

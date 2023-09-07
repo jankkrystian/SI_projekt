@@ -23,7 +23,7 @@
         <div class="col-sm-3">
             <div class="list-group">
                 <a href="{{ url('reservation_create') }}" title="{{'action.borrow'|trans}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{ 'action.borrow' | trans }}</a>
-                <img src="books_grafika_SI.png">
+                <img src="books_grafika_SI.gif">
                 <a href="{{ url('book_create') }}" title="{{'action.create'|trans}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{ 'action.create' | trans }}</a>
 
             </div>
@@ -43,9 +43,6 @@
                 <th>{{ knp_pagination_sortable(pagination, 'label.genre.genreTitle'|trans, 'genre.genreTitle') }}</th>
                 <th>{{ knp_pagination_sortable(pagination, 'label.publisher.publisherTitle'|trans, 'publisher.publisherTitle') }}</th>
                 <th>{{ knp_pagination_sortable(pagination, 'label.creator.surname'|trans, 'creator.surname') }}</th>
-                <th>{{ 'action.show'|trans }}</th>
-                <th>{{ 'action.edit'|trans }}</th>
-                <th>{{ 'action.delete'|trans }}</th>
 
             </tr>
             </thead>

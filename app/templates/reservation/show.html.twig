@@ -8,7 +8,7 @@
     <body>
     <div class="container">
         <div class="row">
-            <h1>{{ 'title.details'|trans }}</h1>
+            <h1>{{ 'title.reservation_details'|trans }}</h1>
             {% if reservation is defined and reservation|length %}
                 <dl class="dl-horizontal">
                     <dt>{{ 'label.id'|trans }}</dt>
@@ -21,11 +21,9 @@
                     <dd>{{ reservation.note }}</dd>
                     <dt>{{ 'label.book.id'|trans }}</dt>
                     <dd>{{ reservation.book.id }}</dd>
-                    <dt>{{ 'label.actions'|trans }}</dt>
-                    <dd>
-                        <a class="btn btn-outline-warning me-2 mt-2" href="{{ url('reservation_index', {id: reservation.id}) }}" title="{{ 'action.index'|trans }}">
-                            {{ 'action.index'|trans }}
-                        </a>
+                        <td>
+                            <a href="{{ url('reservation_index', {id: reservation.id}) }}" title="{{'action.back_to_list'|trans}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{ 'action.back_to_list' | trans }}</a>
+                        </td>
 
                     </dd>
                 </dl>
