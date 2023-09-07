@@ -45,10 +45,10 @@ security:
         - { path: ^/home, roles: PUBLIC_ACCESS }
         - { path: ^/contact, roles: PUBLIC_ACCESS }
         - { path: ^/book, roles: PUBLIC_ACCESS }
+        - { path: ^/reservation, roles: PUBLIC_ACCESS }
         - { path: ^/genre, roles: ROLE_ADMIN }
         - { path: ^/publisher, roles: ROLE_ADMIN }
         - { path: ^/creator, roles: ROLE_ADMIN }
-        - { path: ^book_create, roles: ROLE_ADMIN }
         - { path: ^/, roles: ROLE_USER}
 
 when@test:
