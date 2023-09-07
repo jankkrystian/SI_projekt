@@ -52,6 +52,9 @@ class Book
     #[Assert\NotBlank]
     #[Assert\Type(User::class)]
     private ?User $author = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $availability = null;
     
 
     public function getId(): ?int
@@ -114,6 +117,18 @@ class Book
     public function setAuthor(?User $author): static
     {
         $this->author = $author;
+
+        return $this;
+    }
+
+    public function getAvailability(): ?int
+    {
+        return $this->availability;
+    }
+
+    public function setAvailability(?int $availability): static
+    {
+        $this->availability = $availability;
 
         return $this;
     }

@@ -298,6 +298,10 @@
         <source>label.publisherTitle</source>
         <target>Publisher name</target>
       </trans-unit>
+      <trans-unit id="label.availability">
+        <source>label.availability</source>
+        <target>Current availability</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

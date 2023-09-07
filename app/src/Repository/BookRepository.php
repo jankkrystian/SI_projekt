@@ -57,7 +57,7 @@ class BookRepository extends ServiceEntityRepository
     {
         $queryBuilder =  $this->getOrCreateQueryBuilder()
             ->select(
-                'partial book.{id, title}',
+                'partial book.{id, title, availability}',
             'partial genre.{id, genreTitle}',
             'partial publisher.{id, publisherTitle}',
             'partial creator.{id, nick, name, surname}'

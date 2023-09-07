@@ -39,6 +39,7 @@
             <tr>
                 <th>{{ knp_pagination_sortable(pagination, 'label.id'|trans, 'book.id') }}</th>
                 <th>{{ knp_pagination_sortable(pagination, 'label.title'|trans, 'book.title') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.availability'|trans, 'book.availability') }}</th>
                 <th>{{ knp_pagination_sortable(pagination, 'label.book.author'|trans, 'book.author') }}</th>
                 <th>{{ knp_pagination_sortable(pagination, 'label.genre.genreTitle'|trans, 'genre.genreTitle') }}</th>
                 <th>{{ knp_pagination_sortable(pagination, 'label.publisher.publisherTitle'|trans, 'publisher.publisherTitle') }}</th>
@@ -51,6 +52,7 @@
                 <tr>
                     <td>{{ book.id }}</td>
                     <td>{{ book.title }}</td>
+                    <td>{{ book.availability }}</td>
                     <td>{{ book.author.email }}</td>
 
 

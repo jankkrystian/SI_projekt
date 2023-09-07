@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20230905155101 extends AbstractMigration
+final class Version20230907164332 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -20,7 +20,7 @@ final class Version20230905155101 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('CREATE TABLE books (id INT AUTO_INCREMENT NOT NULL, genre_id INT NOT NULL, publisher_id INT NOT NULL, creator_id INT NOT NULL, author_id INT DEFAULT NULL, title VARCHAR(255) NOT NULL, INDEX IDX_4A1B2A924296D31F (genre_id), INDEX IDX_4A1B2A9240C86FCE (publisher_id), INDEX IDX_4A1B2A9261220EA6 (creator_id), INDEX IDX_4A1B2A92F675F31B (author_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE books (id INT AUTO_INCREMENT NOT NULL, genre_id INT NOT NULL, publisher_id INT NOT NULL, creator_id INT NOT NULL, author_id INT NOT NULL, title VARCHAR(255) NOT NULL, availability INT DEFAULT NULL, INDEX IDX_4A1B2A924296D31F (genre_id), INDEX IDX_4A1B2A9240C86FCE (publisher_id), INDEX IDX_4A1B2A9261220EA6 (creator_id), INDEX IDX_4A1B2A92F675F31B (author_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE creators (id INT AUTO_INCREMENT NOT NULL, nick VARCHAR(255) NOT NULL, name VARCHAR(255) NOT NULL, surname VARCHAR(255) NOT NULL, slug VARCHAR(255) NOT NULL, UNIQUE INDEX uq_creators_nick (nick), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE genres (id INT AUTO_INCREMENT NOT NULL, genre_title VARCHAR(255) NOT NULL, slug VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE publishers (id INT AUTO_INCREMENT NOT NULL, publisher_title VARCHAR(255) NOT NULL, slug VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');

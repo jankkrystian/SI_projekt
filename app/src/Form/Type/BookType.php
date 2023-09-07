@@ -9,6 +9,7 @@ use App\Entity\Book;
 use App\Entity\Creator;
 use App\Entity\Publisher;
 use App\Entity\Genre;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -41,6 +42,13 @@ class BookType extends AbstractType
                 'required' => true,
                 'attr' => ['max_length' => 255],
             ])
+        ->add(
+                'availability',
+                IntegerType::class,
+                [
+                    'label' => 'label.availability',
+                    'required' => false,
+                ])
         ->add(
             'genre',
             EntityType::class,
