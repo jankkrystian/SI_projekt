@@ -8,9 +8,7 @@ namespace App\Entity;
 use App\Repository\PublisherRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
-
 
 /**
  * Class Publisher.
@@ -32,19 +30,18 @@ class Publisher
     /**
      * Title.
      */
-    #[ORM\Column(type:'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255)]
     #[Assert\Type('string')]
     #[Assert\NotBlank]
-    #[Assert\Length(min:3, max: 255)]
+    #[Assert\Length(min: 1, max: 255)]
     private ?string $publisherTitle;
 
     /**
      * Slug.
-     * @var string|null
      */
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\Type('string')]
-    #[Assert\Length(min: 3, max: 255)]
+    #[Assert\Length(min: 1, max: 255)]
     #[Gedmo\Slug(fields: ['publisherTitle'])]
     private ?string $slug = null;
 
@@ -78,11 +75,19 @@ class Publisher
         $this->publisherTitle = $publisherTitle;
     }
 
+    /**
+     * @return string|null Result
+     */
     public function getSlug(): ?string
     {
         return $this->slug;
     }
 
+    /**
+     * @param string $slug Slug
+     *
+     * @return $this Result
+     */
     public function setSlug(string $slug): static
     {
         $this->slug = $slug;

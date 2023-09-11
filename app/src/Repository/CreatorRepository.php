@@ -2,12 +2,11 @@
 /**
  * Creator repository.
  */
+
 namespace App\Repository;
 
 use App\Entity\Creator;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\ORM\NonUniqueResultException;
-use Doctrine\ORM\NoResultException;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -64,6 +63,7 @@ class CreatorRepository extends ServiceEntityRepository
         $this->_em->persist($creator);
         $this->_em->flush();
     }
+
     /**
      * Delete entity.
      *
@@ -74,6 +74,7 @@ class CreatorRepository extends ServiceEntityRepository
         $this->_em->remove($creator);
         $this->_em->flush();
     }
+
     /**
      * Get or create new query builder.
      *

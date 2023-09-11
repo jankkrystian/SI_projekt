@@ -1,10 +1,16 @@
 <?php
+/**
+ * Genre Service Interface.
+ */
 
 namespace App\Interface;
 
 use App\Entity\Genre;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 
+/**
+ * Interface GenreServiceInterface.
+ */
 interface GenreServiceInterface
 {
     /**
@@ -22,7 +28,6 @@ interface GenreServiceInterface
      * @param Genre $genre Genre entity
      */
     public function save(Genre $genre): void;
-
 
     /**
      * @param Genre $genre Genre entity

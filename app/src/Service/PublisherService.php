@@ -9,7 +9,6 @@ use App\Entity\Publisher;
 use App\Interface\PublisherServiceInterface;
 use App\Repository\PublisherRepository;
 use App\Repository\BookRepository;
-use Doctrine\ORM\QueryBuilder;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
@@ -29,15 +28,16 @@ class PublisherService implements PublisherServiceInterface
     private PaginatorInterface $paginator;
 
     /**
-     * Book repository
+     * Book repository.
      */
     private BookRepository $bookRepository;
 
     /**
      * Constructor.
      *
-     * @param PublisherRepository     $publisherRepository Publisher repository
-     * @param PaginatorInterface $paginator      Paginator
+     * @param PublisherRepository $publisherRepository Publisher repository
+     * @param BookRepository      $bookRepository      Book repository
+     * @param PaginatorInterface  $paginator           Paginator
      */
     public function __construct(PublisherRepository $publisherRepository, BookRepository $bookRepository, PaginatorInterface $paginator)
     {
@@ -61,6 +61,7 @@ class PublisherService implements PublisherServiceInterface
             PublisherRepository::PAGINATOR_ITEMS_PER_PAGE
         );
     }
+
     /**
      * Save entity.
      *
@@ -70,6 +71,12 @@ class PublisherService implements PublisherServiceInterface
     {
         $this->publisherRepository->save($publisher);
     }
+
+    /**
+     * Delete entity.
+     *
+     * @param Publisher $publisher Publisher entity
+     */
     public function delete(Publisher $publisher): void
     {
         $this->publisherRepository->delete($publisher);
@@ -92,6 +99,7 @@ class PublisherService implements PublisherServiceInterface
             return false;
         }
     }
+
     // CategoryService.php
     /**
      * Find by id.

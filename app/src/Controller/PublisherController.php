@@ -28,14 +28,14 @@ class PublisherController extends AbstractController
 
     /**
      * Translator.
-     *
-     * @var TranslatorInterface
      */
     private TranslatorInterface $translator;
+
     /**
      * Constructor.
+     *
      * @param PublisherServiceInterface $publisherService Publisher service
-     * @param TranslatorInterface      $translator  Translator
+     * @param TranslatorInterface       $translator       Translator
      */
     public function __construct(PublisherServiceInterface $publisherService, TranslatorInterface $translator)
     {
@@ -112,10 +112,11 @@ class PublisherController extends AbstractController
             ['form' => $form->createView()]
         );
     }
+
     /**
      * Edit action.
      *
-     * @param Request  $request  HTTP request
+     * @param Request   $request   HTTP request
      * @param Publisher $publisher Publisher entity
      *
      * @return Response HTTP response
@@ -152,10 +153,11 @@ class PublisherController extends AbstractController
             ]
         );
     }
+
     /**
      * Delete action.
      *
-     * @param Request  $request  HTTP request
+     * @param Request   $request   HTTP request
      * @param Publisher $publisher Publisher entity
      *
      * @return Response HTTP response
@@ -163,11 +165,12 @@ class PublisherController extends AbstractController
     #[Route('/{id}/delete', name: 'publisher_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
     public function delete(Request $request, Publisher $publisher): Response
     {
-        if(!$this->publisherService->canBeDeleted($publisher)){
+        if (!$this->publisherService->canBeDeleted($publisher)) {
             $this->addFlash(
                 'warning',
                 $this->translator->trans('message.publisher_contains_books')
             );
+
             return $this->redirectToRoute('publisher_index');
         }
 
@@ -182,7 +185,7 @@ class PublisherController extends AbstractController
 
             $this->addFlash(
                 'success',
-                $this->translator->trans('message.deleted_successfully')
+                $this->translator->trans('message.deleted_success')
             );
 
             return $this->redirectToRoute('publisher_index');
@@ -196,5 +199,4 @@ class PublisherController extends AbstractController
             ]
         );
     }
-
 }

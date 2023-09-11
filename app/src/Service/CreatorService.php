@@ -31,12 +31,13 @@ class CreatorService implements CreatorServiceInterface
      * Book repository.
      */
     private BookRepository $bookRepository;
+
     /**
      * Constructor.
      *
-     * @param CreatorRepository     $creatorRepository Creator repository
-     * @param BookRepository     $bookRepository Book repository
-     * @param PaginatorInterface $paginator      Paginator
+     * @param CreatorRepository  $creatorRepository Creator repository
+     * @param BookRepository     $bookRepository    Book repository
+     * @param PaginatorInterface $paginator         Paginator
      */
     public function __construct(CreatorRepository $creatorRepository, BookRepository $bookRepository, PaginatorInterface $paginator)
     {
@@ -60,6 +61,7 @@ class CreatorService implements CreatorServiceInterface
             CreatorRepository::PAGINATOR_ITEMS_PER_PAGE
         );
     }
+
     /**
      * Save entity.
      *
@@ -69,10 +71,17 @@ class CreatorService implements CreatorServiceInterface
     {
         $this->creatorRepository->save($creator);
     }
+
+    /**
+     * Delete entity.
+     *
+     * @param Creator $creator Creator entity
+     */
     public function delete(Creator $creator): void
     {
         $this->creatorRepository->delete($creator);
     }
+
     /**
      * Can Category be deleted?
      *
@@ -90,6 +99,7 @@ class CreatorService implements CreatorServiceInterface
             return false;
         }
     }
+
     // CategoryService.php
     /**
      * Find by id.

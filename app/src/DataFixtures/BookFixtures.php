@@ -8,8 +8,6 @@ namespace App\DataFixtures;
 use App\Entity\Genre;
 use App\Entity\Publisher;
 use App\Entity\Creator;
-use App\Entity\Enum\BookStatus;
-use App\Entity\Tag;
 use App\Entity\Book;
 use App\Entity\User;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
@@ -71,5 +69,4 @@ class BookFixtures extends AbstractBaseFixtures implements DependentFixtureInter
     {
         return [GenreFixtures::class, PublisherFixtures::class, CreatorFixtures::class, UserFixtures::class];
     }
-
 }

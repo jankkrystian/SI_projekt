@@ -2,12 +2,11 @@
 /**
  * Genre repository.
  */
+
 namespace App\Repository;
 
 use App\Entity\Genre;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\ORM\NonUniqueResultException;
-use Doctrine\ORM\NoResultException;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -54,7 +53,6 @@ class GenreRepository extends ServiceEntityRepository
             ->orderBy('genre.id', 'DESC');
     }
 
-
     /**
      * Save entity.
      *
@@ -88,5 +86,4 @@ class GenreRepository extends ServiceEntityRepository
     {
         return $queryBuilder ?? $this->createQueryBuilder('genre');
     }
-
 }

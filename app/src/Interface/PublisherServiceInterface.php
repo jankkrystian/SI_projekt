@@ -1,10 +1,16 @@
 <?php
+/**
+ * Publisher Service Interface.
+ */
 
 namespace App\Interface;
 
 use App\Entity\Publisher;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 
+/**
+ * Interface PublisherServiceInterface.
+ */
 interface PublisherServiceInterface
 {
     /**
@@ -29,6 +35,7 @@ interface PublisherServiceInterface
      * @return void Result
      */
     public function delete(Publisher $publisher): void;
+
     /**
      * Can Publisher be deleted?
      *

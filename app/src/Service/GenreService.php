@@ -9,10 +9,8 @@ use App\Entity\Genre;
 use App\Interface\GenreServiceInterface;
 use App\Repository\BookRepository;
 use App\Repository\GenreRepository;
-use Doctrine\ORM\QueryBuilder;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
-
 
 /**
  * Class GenreService.
@@ -30,16 +28,16 @@ class GenreService implements GenreServiceInterface
     private PaginatorInterface $paginator;
 
     /**
-     * Book repository
+     * Book repository.
      */
     private BookRepository $bookRepository;
 
     /**
      * Constructor.
      *
-     * @param GenreRepository     $genreRepository Genre repository
-     * @param BookRepository     $bookRepository Book repository
-     * @param PaginatorInterface $paginator      Paginator
+     * @param GenreRepository    $genreRepository Genre repository
+     * @param BookRepository     $bookRepository  Book repository
+     * @param PaginatorInterface $paginator       Paginator
      */
     public function __construct(GenreRepository $genreRepository, BookRepository $bookRepository, PaginatorInterface $paginator)
     {
@@ -63,6 +61,7 @@ class GenreService implements GenreServiceInterface
             GenreRepository::PAGINATOR_ITEMS_PER_PAGE
         );
     }
+
     /**
      * Save entity.
      *
@@ -73,10 +72,16 @@ class GenreService implements GenreServiceInterface
         $this->genreRepository->save($genre);
     }
 
+    /**
+     * Delete entity.
+     *
+     * @param Genre $genre Genre entity
+     */
     public function delete(Genre $genre): void
     {
         $this->genreRepository->delete($genre);
     }
+
     /**
      * Can Genre be deleted?
      *
@@ -94,6 +99,7 @@ class GenreService implements GenreServiceInterface
             return false;
         }
     }
+
     // CategoryService.php
     /**
      * Find by id.
@@ -108,5 +114,4 @@ class GenreService implements GenreServiceInterface
     {
         return $this->genreRepository->findOneById($id);
     }
-
 }

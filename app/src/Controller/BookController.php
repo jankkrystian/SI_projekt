@@ -28,19 +28,19 @@ class BookController extends AbstractController
 
     /**
      * Translator.
-     *
-     * @var TranslatorInterface
      */
     private TranslatorInterface $translator;
 
     /**
      * Constructor.
+     *
+     * @param BookServiceInterface $bookService Book service
+     * @param TranslatorInterface  $translator  Translator
      */
     public function __construct(BookServiceInterface $bookService, TranslatorInterface $translator)
     {
         $this->bookService = $bookService;
         $this->translator = $translator;
-
     }
 
     /**
@@ -61,26 +61,6 @@ class BookController extends AbstractController
 
         return $this->render('book/index.html.twig', ['pagination' => $pagination]);
     }
-    // ...
-    /**
-     * Get filters from request.
-     *
-     * @param Request $request HTTP request
-     *
-     * @return array<string, int> Array of filters
-     *
-     * @psalm-return array{genre_id: int, tag_id: int, status_id: int}
-     */
-    private function getFilters(Request $request): array
-    {
-        $filters = [];
-        $filters['genre_id'] = $request->query->getInt('filters_genre_id');
-        $filters['publisher_id'] = $request->query->getInt('filters_publisher_id');
-        $filters['creator_id'] = $request->query->getInt('filters_creator_id');
-
-        return $filters;
-    }
-
 
     /**
      * Show action.
@@ -127,7 +107,7 @@ class BookController extends AbstractController
 
             $this->addFlash(
                 'success',
-                $this->translator->trans('message.added_successfully')
+                $this->translator->trans('message.added_success')
             );
 
             return $this->redirectToRoute('book_index');
@@ -138,11 +118,12 @@ class BookController extends AbstractController
             ['form' => $form->createView()]
         );
     }
+
     /**
      * Edit action.
      *
-     * @param Request  $request  HTTP request
-     * @param Book $book Book entity
+     * @param Request $request HTTP request
+     * @param Book    $book    Book entity
      *
      * @return Response HTTP response
      */
@@ -165,7 +146,7 @@ class BookController extends AbstractController
 
             $this->addFlash(
                 'success',
-                $this->translator->trans('message.added_successfully')
+                $this->translator->trans('message.added_success')
             );
 
             return $this->redirectToRoute('book_index');
@@ -179,11 +160,12 @@ class BookController extends AbstractController
             ]
         );
     }
+
     /**
      * Delete action.
      *
-     * @param Request  $request  HTTP request
-     * @param Book $book Book entity
+     * @param Request $request HTTP request
+     * @param Book    $book    Book entity
      *
      * @return Response HTTP response
      */
@@ -202,7 +184,7 @@ class BookController extends AbstractController
 
             $this->addFlash(
                 'success',
-                $this->translator->trans('message.deleted_successfully')
+                $this->translator->trans('message.deleted_success')
             );
 
             return $this->redirectToRoute('book_index');
@@ -217,4 +199,23 @@ class BookController extends AbstractController
         );
     }
 
+    // ...
+    /**
+     * Get filters from request.
+     *
+     * @param Request $request HTTP request
+     *
+     * @return array<string, int> Array of filters
+     *
+     * @psalm-return array{genre_id: int, tag_id: int, status_id: int}
+     */
+    private function getFilters(Request $request): array
+    {
+        $filters = [];
+        $filters['genre_id'] = $request->query->getInt('filters_genre_id');
+        $filters['publisher_id'] = $request->query->getInt('filters_publisher_id');
+        $filters['creator_id'] = $request->query->getInt('filters_creator_id');
+
+        return $filters;
+    }
 }

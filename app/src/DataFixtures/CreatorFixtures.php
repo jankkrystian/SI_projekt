@@ -28,7 +28,6 @@ class CreatorFixtures extends AbstractBaseFixtures
             $creator->setName($this->faker->sentence);
             $creator->setSurname($this->faker->sentence);
 
-
             return $creator;
         });
 

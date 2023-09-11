@@ -34,6 +34,14 @@
         <source>title.reservation_list</source>
         <target>Rezerwacje</target>
       </trans-unit>
+      <trans-unit id="title.reservation_details">
+        <source>title.reservation_details</source>
+        <target>Informacje na temat rezerwacji</target>
+      </trans-unit>
+      <trans-unit id="title.book_details">
+        <source>title.book_details</source>
+        <target>Informacje na temat książki</target>
+      </trans-unit>
       <trans-unit id="label.actions">
         <source>label.actions</source>
         <target>Pokaż</target>
@@ -66,6 +74,7 @@
         <source>label.surname</source>
         <target>Nazwisko</target>
       </trans-unit>
+
       <trans-unit id="label.genre.genreTitle">
         <source>label.genre.genreTitle</source>
         <target>Gatunek</target>
@@ -77,6 +86,14 @@
       <trans-unit id="label.creator.surname">
         <source>label.creator.surname</source>
         <target>Twórca</target>
+      </trans-unit>
+      <trans-unit id="label.creator.name">
+        <source>label.creator.name</source>
+        <target>Imię</target>
+      </trans-unit>
+      <trans-unit id="label.creator.nick">
+        <source>label.creator.nick</source>
+        <target>Nick twórcy</target>
       </trans-unit>
       <trans-unit id="message.empty_list">
         <source>message.empty_list</source>
@@ -98,9 +115,13 @@
       <source>message.added_success</source>
       <target>Udało się dodać!</target>
       </trans-unit>
-      <trans-unit id="message.deleted_successfully">
-       <source>message.deleted_successfully</source>
+      <trans-unit id="message.deleted_success">
+       <source>message.deleted_success</source>
       <target>Udało się usunąć!</target>
+      </trans-unit>
+      <trans-unit id="message.edited_success">
+        <source>message.edited_success</source>
+        <target>Zaktualizowano pomyślnie!</target>
       </trans-unit>
       <trans-unit id="action.back_to_list">
         <source>action.back_to_list</source>
@@ -194,13 +215,29 @@
         <source>title.book_delete</source>
         <target>Usuń książkę!</target>
       </trans-unit>
+      <trans-unit id="title.book_edit">
+        <source>title.book_edit</source>
+        <target>Edytuj książkę!</target>
+      </trans-unit>
+      <trans-unit id="title.user_edit">
+        <source>title.user_edit</source>
+        <target>Edytuj użytkownika!</target>
+      </trans-unit>
       <trans-unit id="action.login">
         <source>action.login</source>
-        <target>Login</target>
+        <target>Zaloguj się</target>
       </trans-unit>
       <trans-unit id="action.logout">
         <source>action.logout</source>
-        <target>Logout</target>
+        <target>Wyloguj się</target>
+      </trans-unit>
+      <trans-unit id="action.edit_email">
+        <source>action.edit_email</source>
+        <target>Edytuj email</target>
+      </trans-unit>
+      <trans-unit id="action.edit_password">
+        <source>action.edit_password</source>
+        <target>Edituj hasło</target>
       </trans-unit>
       <trans-unit id="language.text">
         <source>language.text</source>
@@ -266,6 +303,10 @@
         <source>label.book.author</source>
         <target>Kto dodał książkę</target>
       </trans-unit>
+      <trans-unit id="label.author.email">
+        <source>label.author.email</source>
+        <target>Email</target>
+      </trans-unit>
       <trans-unit id="label.genreTitle">
         <source>label.genreTitle</source>
         <target>Nazwa gatunku</target>
@@ -273,6 +314,14 @@
       <trans-unit id="label.publisherTitle">
         <source>label.publisherTitle</source>
         <target>Nazwa wydawnictwa</target>
+      </trans-unit>
+      <trans-unit id="label.availability">
+        <source>label.availability</source>
+        <target>Obecna dostępność</target>
+      </trans-unit>
+      <trans-unit id="message.form_error">
+        <source>message.form_error</source>
+        <target>Błąd formularza</target>
       </trans-unit>
     </body>
   </file>

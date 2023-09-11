@@ -141,7 +141,7 @@ class ReservationController extends AbstractController
 
             $this->addFlash(
                 'success',
-                $this->translator->trans('message.deleted_successfully')
+                $this->translator->trans('message.deleted_success')
             );
 
             return $this->redirectToRoute('reservation_index');

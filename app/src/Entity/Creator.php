@@ -24,56 +24,45 @@ class Creator
 {
     /**
      * Primary key.
-     *
-     * @var int|null
      */
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
     private ?int $id = null;
 
-
-
     /**
      * Nick.
-     *
-     * @var string|null
      */
-    #[ORM\Column(type:'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255)]
     #[Assert\Type('string')]
     #[Assert\NotBlank]
-    #[Assert\Length(min:1, max: 255)]
+    #[Assert\Length(min: 1, max: 255)]
     private ?string $nick;
 
     /**
      * Name.
-     *
-     * @var string|null
      */
-    #[ORM\Column(type:'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255)]
     #[Assert\Type('string')]
     #[Assert\NotBlank]
-    #[Assert\Length(min:2, max: 255)]
+    #[Assert\Length(min: 1, max: 255)]
     private ?string $name;
 
     /**
      * Surname.
-     *
-     * @var string|null
      */
-    #[ORM\Column(type:'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255)]
     #[Assert\Type('string')]
     #[Assert\NotBlank]
-    #[Assert\Length(min:2, max: 255)]
+    #[Assert\Length(min: 1, max: 255)]
     private ?string $surname;
 
     /**
      * Slug.
-     * @var string|null
      */
-    #[ORM\Column(type:'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255)]
     #[Assert\Type('string')]
-    #[Assert\Length(min:1, max: 255)]
+    #[Assert\Length(min: 1, max: 255)]
     #[Gedmo\Slug(fields: ['nick'])]
     private ?string $slug = null;
 
@@ -86,7 +75,6 @@ class Creator
     {
         return $this->id;
     }
-
 
     /**
      * Getter for nick.
@@ -148,11 +136,19 @@ class Creator
         $this->surname = $surname;
     }
 
+    /**
+     * @return string|null Result
+     */
     public function getSlug(): ?string
     {
         return $this->slug;
     }
 
+    /**
+     * @param string $slug Slug
+     *
+     * @return $this Result
+     */
     public function setSlug(string $slug): static
     {
         $this->slug = $slug;

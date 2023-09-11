@@ -28,18 +28,14 @@ class CreatorController extends AbstractController
 
     /**
      * Translator.
-     *
-     * @var TranslatorInterface
      */
     private TranslatorInterface $translator;
-    /**
-     * Constructor.
-     * @param CreatorServiceInterface $creatorService Creator service
-     * @param TranslatorInterface      $translator  Translator
-     */
 
     /**
      * Constructor.
+     *
+     * @param CreatorServiceInterface $creatorService Creator service
+     * @param TranslatorInterface     $translator     Translator
      */
     public function __construct(CreatorServiceInterface $creatorService, TranslatorInterface $translator)
     {
@@ -116,10 +112,11 @@ class CreatorController extends AbstractController
             ['form' => $form->createView()]
         );
     }
+
     /**
      * Edit action.
      *
-     * @param Request  $request  HTTP request
+     * @param Request $request HTTP request
      * @param Creator $creator Creator entity
      *
      * @return Response HTTP response
@@ -156,10 +153,11 @@ class CreatorController extends AbstractController
             ]
         );
     }
+
     /**
      * Delete action.
      *
-     * @param Request  $request  HTTP request
+     * @param Request $request HTTP request
      * @param Creator $creator Creator entity
      *
      * @return Response HTTP response
@@ -167,11 +165,12 @@ class CreatorController extends AbstractController
     #[Route('/{id}/delete', name: 'creator_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
     public function delete(Request $request, Creator $creator): Response
     {
-        if(!$this->creatorService->canBeDeleted($creator)) {
+        if (!$this->creatorService->canBeDeleted($creator)) {
             $this->addFlash(
                 'warning',
                 $this->translator->trans('message.creator_contains_books')
             );
+
             return $this->redirectToRoute('creator_index');
         }
         $form = $this->createForm(FormType::class, $creator, [
@@ -185,7 +184,7 @@ class CreatorController extends AbstractController
 
             $this->addFlash(
                 'success',
-                $this->translator->trans('message.deleted_successfully')
+                $this->translator->trans('message.deleted_success')
             );
 
             return $this->redirectToRoute('creator_index');
@@ -199,5 +198,4 @@ class CreatorController extends AbstractController
             ]
         );
     }
-
 }

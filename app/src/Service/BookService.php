@@ -25,17 +25,17 @@ class BookService implements BookServiceInterface
     private BookRepository $bookRepository;
 
     /**
-     * Genre service
+     * Genre service.
      */
     private GenreServiceInterface $genreService;
 
     /**
-     * Publisher service
+     * Publisher service.
      */
     private PublisherServiceInterface $publisherService;
 
     /**
-     * Creator service
+     * Creator service.
      */
     private CreatorServiceInterface $creatorService;
 
@@ -47,11 +47,11 @@ class BookService implements BookServiceInterface
     /**
      * Constructor.
      *
-     * @param BookRepository     $bookRepository Book repository
-     * @param GenreServiceInterface $genreService Genre serive
+     * @param BookRepository            $bookRepository   Book repository
+     * @param GenreServiceInterface     $genreService     Genre serive
      * @param PublisherServiceInterface $publisherService Publisher serive
-     * @param CreatorServiceInterface $creatorService Creator serive
-     * @param PaginatorInterface $paginator      Paginator
+     * @param CreatorServiceInterface   $creatorService   Creator serive
+     * @param PaginatorInterface        $paginator        Paginator
      */
     public function __construct(BookRepository $bookRepository, GenreServiceInterface $genreService, PublisherServiceInterface $publisherService, CreatorServiceInterface $creatorService, PaginatorInterface $paginator)
     {
@@ -65,13 +65,15 @@ class BookService implements BookServiceInterface
     /**
      * Get paginated list.
      *
-     * @param int $page Page number
+     * @param int                $page    Page number
+     * @param array<string, int> $filters Raw filters from request
      *
      * @return PaginationInterface<string, mixed> Paginated list
      */
     public function getPaginatedList(int $page, array $filters = []): PaginationInterface
     {
         $filters = $this->prepareFilters($filters);
+
         return $this->paginator->paginate(
             $this->bookRepository->queryAll($filters),
             $page,
@@ -86,13 +88,19 @@ class BookService implements BookServiceInterface
      */
     public function save(Book $book): void
     {
-
         $this->bookRepository->save($book);
     }
+
+    /**
+     * Delete entity.
+     *
+     * @param Book $book Book entity
+     */
     public function delete(Book $book): void
     {
         $this->bookRepository->delete($book);
     }
+
     /**
      * Prepare filters for the tasks list.
      *

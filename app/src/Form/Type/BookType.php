@@ -41,51 +41,50 @@ class BookType extends AbstractType
                 'label' => 'label.title',
                 'required' => true,
                 'attr' => ['max_length' => 255],
-            ])
+            ]
+        )
         ->add(
-                'availability',
-                IntegerType::class,
-                [
+            'availability',
+            IntegerType::class,
+            [
                     'label' => 'label.availability',
                     'required' => false,
-                ])
+                ]
+        )
         ->add(
             'genre',
             EntityType::class,
-            ['class'=>Genre::class,
-                'choice_label'=>function ($genre): string {
-                return $genre->getGenreTitle();
+            ['class' => Genre::class,
+                'choice_label' => function ($genre): string {
+                    return $genre->getGenreTitle();
                 },
-                'label'=>'label.genreTitle',
-                'placeholder'=>'genre',
-                'required'=>true,
-
+                'label' => 'label.genreTitle',
+                'placeholder' => 'genre',
+                'required' => true,
             ]
         )
             ->add(
                 'publisher',
                 EntityType::class,
-                ['class'=>Publisher::class,
-                    'choice_label'=>function ($publisher): string {
+                ['class' => Publisher::class,
+                    'choice_label' => function ($publisher): string {
                         return $publisher->getPublisherTitle();
                     },
-                    'label'=>'label.publisherTitle',
-                    'placeholder'=>'publisher',
-                    'required'=>true,
-
+                    'label' => 'label.publisherTitle',
+                    'placeholder' => 'publisher',
+                    'required' => true,
                 ]
             )
             ->add(
                 'creator',
                 EntityType::class,
-                ['class'=>Creator::class,
-                    'choice_label'=>function ($creator): string {
+                ['class' => Creator::class,
+                    'choice_label' => function ($creator): string {
                         return $creator->getNick();
                     },
-                    'label'=>'label.creator.nick',
-                    'placeholder'=>'nick',
-                    'required'=>true,
-
+                    'label' => 'label.creator.nick',
+                    'placeholder' => 'nick',
+                    'required' => true,
                 ]
             )
         ;

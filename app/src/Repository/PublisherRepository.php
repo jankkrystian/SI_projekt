@@ -2,12 +2,11 @@
 /**
  * Publisher repository.
  */
+
 namespace App\Repository;
 
 use App\Entity\Publisher;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\ORM\NonUniqueResultException;
-use Doctrine\ORM\NoResultException;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -54,7 +53,6 @@ class PublisherRepository extends ServiceEntityRepository
             ->orderBy('publisher.publisherTitle', 'DESC');
     }
 
-
     // ...
     /**
      * Save entity.
@@ -66,6 +64,7 @@ class PublisherRepository extends ServiceEntityRepository
         $this->_em->persist($publisher);
         $this->_em->flush();
     }
+
     /**
      * Delete entity.
      *
@@ -76,6 +75,7 @@ class PublisherRepository extends ServiceEntityRepository
         $this->_em->remove($publisher);
         $this->_em->flush();
     }
+
     /**
      * Get or create new query builder.
      *
@@ -87,5 +87,4 @@ class PublisherRepository extends ServiceEntityRepository
     {
         return $queryBuilder ?? $this->createQueryBuilder('publisher');
     }
-
 }

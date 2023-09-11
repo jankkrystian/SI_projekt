@@ -36,7 +36,8 @@ class GenreType extends AbstractType
                 'label' => 'label.genreTitle',
                 'required' => true,
                 'attr' => ['max_length' => 64],
-            ]);
+            ]
+        );
     }
 
     /**
@@ -62,4 +63,3 @@ class GenreType extends AbstractType
         return 'genre';
     }
 }
-

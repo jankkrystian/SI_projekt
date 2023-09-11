@@ -36,7 +36,8 @@ class CreatorType extends AbstractType
                 'label' => 'label.nick',
                 'required' => true,
                 'attr' => ['max_length' => 64],
-            ])
+            ]
+        )
         ->add(
             'name',
             TextType::class,
@@ -44,7 +45,8 @@ class CreatorType extends AbstractType
                 'label' => 'label.name',
                 'required' => true,
                 'attr' => ['max_length' => 64],
-            ])
+            ]
+        )
             ->add(
                 'surname',
                 TextType::class,
@@ -52,7 +54,8 @@ class CreatorType extends AbstractType
                     'label' => 'label.surname',
                     'required' => true,
                     'attr' => ['max_length' => 64],
-                ])
+                ]
+            )
 
         ;
     }

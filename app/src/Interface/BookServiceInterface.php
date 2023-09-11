@@ -6,7 +6,6 @@
 namespace App\Interface;
 
 use App\Entity\Book;
-use App\Entity\User;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 
 /**
@@ -36,5 +35,4 @@ interface BookServiceInterface
      * @return void Result
      */
     public function delete(Book $book): void;
-
 }

@@ -1,12 +1,11 @@
 <?php
 /**
- * Genre ffixtures.
+ * Genre fixtures.
  */
 
 namespace App\DataFixtures;
 
 use App\Entity\Genre;
-
 
 /**
  * Class GenreFixtures.

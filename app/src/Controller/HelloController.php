@@ -22,4 +22,3 @@ class HelloController
         return new Response('Hello World!');
     }
 }
-

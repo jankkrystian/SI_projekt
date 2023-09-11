@@ -28,14 +28,14 @@ class GenreController extends AbstractController
 
     /**
      * Translator.
-     *
-     * @var TranslatorInterface
      */
     private TranslatorInterface $translator;
+
     /**
      * Constructor.
+     *
      * @param GenreServiceInterface $genreService Genre service
-     * @param TranslatorInterface      $translator  Translator
+     * @param TranslatorInterface   $translator   Translator
      */
     public function __construct(GenreServiceInterface $genreService, TranslatorInterface $translator)
     {
@@ -77,7 +77,8 @@ class GenreController extends AbstractController
     {
         return $this->render(
             'genre/show.html.twig',
-            ['genre' => $genre]);
+            ['genre' => $genre]
+        );
     }
 
     /**
@@ -103,7 +104,7 @@ class GenreController extends AbstractController
 
             $this->addFlash(
                 'success',
-                      $this->translator->trans('message.added_success')
+                $this->translator->trans('message.added_success')
             );
 
             return $this->redirectToRoute('genre_index');
@@ -113,15 +114,14 @@ class GenreController extends AbstractController
             'genre/create.html.twig',
             ['form' => $form->createView()]
         );
-
     }
 
     // ...
     /**
      * Edit action.
      *
-     * @param Request  $request  HTTP request
-     * @param Genre $genre Genre entity
+     * @param Request $request HTTP request
+     * @param Genre   $genre   Genre entity
      *
      * @return Response HTTP response
      */
@@ -157,22 +157,24 @@ class GenreController extends AbstractController
             ]
         );
     }
+
     /**
      * Delete action.
      *
-     * @param Request  $request  HTTP request
-     * @param Genre $genre Genre entity
+     * @param Request $request HTTP request
+     * @param Genre   $genre   Genre entity
      *
      * @return Response HTTP response
      */
     #[Route('/{id}/delete', name: 'genre_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
     public function delete(Request $request, Genre $genre): Response
     {
-        if(!$this->genreService->canBeDeleted($genre)) {
+        if (!$this->genreService->canBeDeleted($genre)) {
             $this->addFlash(
                 'warning',
                 $this->translator->trans('message.genre_contains_books')
             );
+
             return $this->redirectToRoute('genre_index');
         }
         $form = $this->createForm(FormType::class, $genre, [
@@ -186,7 +188,7 @@ class GenreController extends AbstractController
 
             $this->addFlash(
                 'success',
-                $this->translator->trans('message.deleted_successfully')
+                $this->translator->trans('message.deleted_success')
             );
 
             return $this->redirectToRoute('genre_index');
@@ -200,5 +202,4 @@ class GenreController extends AbstractController
             ]
         );
     }
-
 }

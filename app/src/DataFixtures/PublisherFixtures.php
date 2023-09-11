@@ -26,7 +26,6 @@ class PublisherFixtures extends AbstractBaseFixtures
             $publisher = new Publisher();
             $publisher->setPublisherTitle($this->faker->unique()->word);
 
-
             return $publisher;
         });
 

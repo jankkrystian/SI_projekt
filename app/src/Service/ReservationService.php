@@ -23,19 +23,20 @@ class ReservationService implements ReservationServiceInterface
     private ReservationRepository $reservationRepository;
 
     /**
+     * Book service.
+     */
+    private BookServiceInterface $bookService;
+
+    /**
      * Paginator.
      */
     private PaginatorInterface $paginator;
 
     /**
-     * Book service
-     */
-    private BookServiceInterface $bookService;
-
-    /**
      * Constructor.
      *
-     * @param ReservationRepository $reservationRepository Record repository
+     * @param ReservationRepository $reservationRepository Reservation repository
+     * @param BookServiceInterface  $bookService           Book service
      * @param PaginatorInterface    $paginator             Paginator
      */
     public function __construct(ReservationRepository $reservationRepository, BookServiceInterface $bookService, PaginatorInterface $paginator)

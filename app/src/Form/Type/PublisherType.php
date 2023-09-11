@@ -36,7 +36,8 @@ class PublisherType extends AbstractType
                 'label' => 'label.publisherTitle',
                 'required' => true,
                 'attr' => ['max_length' => 64],
-            ]);
+            ]
+        );
     }
 
     /**
@@ -62,4 +63,3 @@ class PublisherType extends AbstractType
         return 'publisher';
     }
 }
-
