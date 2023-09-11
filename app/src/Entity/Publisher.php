@@ -8,6 +8,7 @@ namespace App\Entity;
 use App\Repository\PublisherRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -17,6 +18,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 #[ORM\Entity(repositoryClass: PublisherRepository::class)]
 #[ORM\Table(name: 'publishers')]
+#[ORM\UniqueConstraint(name: 'uq_publishers_publisherTitle', columns: ['publisher_title'])]
+#[UniqueEntity(fields: ['publisherTitle'])]
 class Publisher
 {
     /**

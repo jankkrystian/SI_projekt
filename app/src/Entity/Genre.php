@@ -8,6 +8,7 @@ namespace App\Entity;
 use App\Repository\GenreRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -17,6 +18,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 #[ORM\Entity(repositoryClass: GenreRepository::class)]
 #[ORM\Table(name: 'genres')]
+#[ORM\UniqueConstraint(name: 'uq_genres_genreTitle', columns: ['genre_title'])]
+#[UniqueEntity(fields: ['genreTitle'])]
 class Genre
 {
     /**
@@ -33,7 +36,7 @@ class Genre
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\Type('string')]
     #[Assert\NotBlank]
-    #[Assert\Length(min: 2, max: 255)]
+    #[Assert\Length(min: 1, max: 255)]
     private ?string $genreTitle = null;
 
     /**
@@ -41,7 +44,7 @@ class Genre
      */
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\Type('string')]
-    #[Assert\Length(min: 2, max: 255)]
+    #[Assert\Length(min: 1, max: 255)]
     #[Gedmo\Slug(fields: ['genreTitle'])]
     private ?string $slug = null;
 
