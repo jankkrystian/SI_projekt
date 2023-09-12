@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Class ContactController.
  */
-#[Route('/contact', name: 'contact')]
+#[Route('/contact')]
 class ContactController extends AbstractController
 {
     /**
@@ -23,7 +23,7 @@ class ContactController extends AbstractController
      *
      * @return Response HTTP response
      */
-    #[Route(name: 'contact', methods: 'GET')]
+    #[Route(name: 'contact_index', methods: 'GET')]
     public function index(Request $request): Response
     {
         return $this->render('contact/index.html.twig');

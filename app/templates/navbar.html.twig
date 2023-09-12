@@ -7,24 +7,24 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="https://wierzba.wzks.uj.edu.pl/~21_goldys/my-library/home">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{{ path('home_index') }}">{{ 'title.home' | trans}}</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Catalog
+                        {{ 'title.catalog' | trans }}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="https://wierzba.wzks.uj.edu.pl/~21_goldys/my-library/book">Books</a></li>
-                        <li><a class="dropdown-item" href="https://wierzba.wzks.uj.edu.pl/~21_goldys/my-library/genre">Genres</a></li>
-                        <li><a class="dropdown-item" href="https://wierzba.wzks.uj.edu.pl/~21_goldys/my-library/publisher">Publishers</a></li>
-                        <li><a class="dropdown-item" href="https://wierzba.wzks.uj.edu.pl/~21_goldys/my-library/creator">Creators</a></li>
-                        <li><a class="dropdown-item" href="https://wierzba.wzks.uj.edu.pl/~21_goldys/my-library/user">Users</a></li>
-                        <li><a class="dropdown-item" href="https://wierzba.wzks.uj.edu.pl/~21_goldys/my-library/reservation">Reservations</a></li>
+                        <li><a class="dropdown-item" href="{{ path('book_index') }}">{{ 'title.book_list'| trans }}</a></li>
+                        <li><a class="dropdown-item" href="{{ path('genre_index') }}">{{ 'title.genre_list' | trans }}</a></li>
+                        <li><a class="dropdown-item" href="{{ path('publisher_index') }}">{{ 'title.publisher_list' | trans }}</a></li>
+                        <li><a class="dropdown-item" href="{{ path('creator_index') }}">{{ 'title.creator_list' | trans}}</a></li>
+                        <li><a class="dropdown-item" href="{{ path('user_index') }}">{{ 'title.user_list' | trans }}</a></li>
+                        <li><a class="dropdown-item" href="{{ path('reservation_index') }}">{{ 'title.reservation_list' | trans}}</a></li>
 
 
                     </ul>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="https://wierzba.wzks.uj.edu.pl/~21_goldys/my-library/contact">Info</a>
+                    <a class="nav-link active" aria-current="page" href="{{ path('contact_index') }}">{{ 'title.contact' | trans }}</a>
                 </li>
                 </li>
 

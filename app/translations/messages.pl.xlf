@@ -323,6 +323,14 @@
         <source>message.form_error</source>
         <target>Błąd formularza</target>
       </trans-unit>
+      <trans-unit id="title.catalog">
+        <source>title.catalog</source>
+        <target>Katalog</target>
+      </trans-unit>
+      <trans-unit id="title.home">
+        <source>title.home</source>
+        <target>Główna</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

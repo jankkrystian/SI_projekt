@@ -322,6 +322,14 @@
         <source>message.form_error</source>
         <target>Form error</target>
       </trans-unit>
+      <trans-unit id="title.catalog">
+        <source>title.catalog</source>
+        <target>Catalog</target>
+      </trans-unit>
+      <trans-unit id="title.home">
+        <source>title.home</source>
+        <target>Home</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
