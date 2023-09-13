@@ -85,7 +85,7 @@
       </trans-unit>
       <trans-unit id="label.creator.surname">
         <source>label.creator.surname</source>
-        <target>Twórca</target>
+        <target>Nazwisko</target>
       </trans-unit>
       <trans-unit id="label.creator.name">
         <source>label.creator.name</source>
@@ -141,7 +141,7 @@
       </trans-unit>
       <trans-unit id="action.borrow">
         <source>action.borrow</source>
-        <target>Wypożycz</target>
+        <target>Wypożycz i zwróć</target>
       </trans-unit>
       <trans-unit id="action.edit">
         <source>action.edit</source>

@@ -22,11 +22,10 @@
 
         <div class="col-sm-3">
             <div class="list-group">
+
                 <a href="{{ url('reservation_create') }}" title="{{'action.borrow'|trans}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{ 'action.borrow' | trans }}</a>
                 <img src="books_grafika_SI.gif">
-                <a href="{{ url('book_create') }}" title="{{'action.create'|trans}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{ 'action.create' | trans }}</a>
-
-            </div>
+                <a href="{{ url('book_create') }}" title="{{'action.create'|trans}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{ 'action.create' | trans }}</a></div>
         </div>
         <div class="col-sm-9">
         <div class="navigation text-center">
@@ -40,7 +39,7 @@
                 <th>{{ knp_pagination_sortable(pagination, 'label.id'|trans, 'book.id') }}</th>
                 <th>{{ knp_pagination_sortable(pagination, 'label.title'|trans, 'book.title') }}</th>
                 <th>{{ knp_pagination_sortable(pagination, 'label.availability'|trans, 'book.availability') }}</th>
-                <th>{{ knp_pagination_sortable(pagination, 'label.book.author'|trans, 'book.author') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.book.author'|trans, 'user.email') }}</th>
                 <th>{{ knp_pagination_sortable(pagination, 'label.genre.genreTitle'|trans, 'genre.genreTitle') }}</th>
                 <th>{{ knp_pagination_sortable(pagination, 'label.publisher.publisherTitle'|trans, 'publisher.publisherTitle') }}</th>
                 <th>{{ knp_pagination_sortable(pagination, 'label.creator.name'|trans, 'creator.name') }}</th>
@@ -55,7 +54,6 @@
                     <td>{{ book.title }}</td>
                     <td>{{ book.availability }}</td>
                     <td>{{ book.author.email }}</td>
-
 
                     <td>
                         <a href="{{ url('book_index', {'filters.genre_id' : book.genre.id}) }}" title="{{ book.genre.genreTitle }}">

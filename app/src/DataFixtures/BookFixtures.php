@@ -33,7 +33,7 @@ class BookFixtures extends AbstractBaseFixtures implements DependentFixtureInter
         $this->createMany(100, 'books', function (int $i) {
             $book = new Book();
             $book->setTitle($this->faker->sentence);
-            $book->setAvailability($this->faker->randomElement(['10']));
+            $book->setAvailability($this->faker->randomElement(['1']));
 
             /** @var Genre $genre */
             $genre = $this->getRandomReference('genres');

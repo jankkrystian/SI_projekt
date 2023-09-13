@@ -62,7 +62,7 @@ class BookRepository extends ServiceEntityRepository
                 'partial book.{id, title, availability}',
                 'partial genre.{id, genreTitle}',
                 'partial publisher.{id, publisherTitle}',
-                'partial creator.{id, nick, name, surname}'
+                'partial creator.{id, nick, name, surname}',
             )
             ->join('book.genre', 'genre')
             ->join('book.publisher', 'publisher')

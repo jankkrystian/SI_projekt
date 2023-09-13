@@ -9,20 +9,23 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ path('home_index') }}">{{ 'title.home' | trans}}</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ path('book_index') }}">{{ 'title.book_list' | trans}}</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ 'title.catalog' | trans }}
                     </a>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ path('book_index') }}">{{ 'title.book_list'| trans }}</a></li>
                         <li><a class="dropdown-item" href="{{ path('genre_index') }}">{{ 'title.genre_list' | trans }}</a></li>
                         <li><a class="dropdown-item" href="{{ path('publisher_index') }}">{{ 'title.publisher_list' | trans }}</a></li>
                         <li><a class="dropdown-item" href="{{ path('creator_index') }}">{{ 'title.creator_list' | trans}}</a></li>
                         <li><a class="dropdown-item" href="{{ path('user_index') }}">{{ 'title.user_list' | trans }}</a></li>
                         <li><a class="dropdown-item" href="{{ path('reservation_index') }}">{{ 'title.reservation_list' | trans}}</a></li>
-
-
                     </ul>
+                    {% endif %}
+
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ path('contact_index') }}">{{ 'title.contact' | trans }}</a>
                 </li>
