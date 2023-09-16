@@ -330,6 +330,22 @@
         <source>title.home</source>
         <target>Home</target>
       </trans-unit>
+      <trans-unit id="title.login">
+        <source>title.login</source>
+        <target>Please sign in</target>
+      </trans-unit>
+      <trans-unit id="footer.info">
+        <source>footer.info</source>
+        <target>© 2023 pgoldys</target>
+      </trans-unit>
+      <trans-unit id="action.show.github">
+        <source>action.show.github</source>
+        <target>my github</target>
+      </trans-unit>
+      <trans-unit id="gif.info">
+        <source>gif.info</source>
+        <target>GIF source: tenor.com</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

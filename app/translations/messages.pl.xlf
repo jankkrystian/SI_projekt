@@ -237,7 +237,7 @@
       </trans-unit>
       <trans-unit id="action.edit_password">
         <source>action.edit_password</source>
-        <target>Edituj hasło</target>
+        <target>Edytuj hasło</target>
       </trans-unit>
       <trans-unit id="language.text">
         <source>language.text</source>
@@ -330,6 +330,22 @@
       <trans-unit id="title.home">
         <source>title.home</source>
         <target>Główna</target>
+      </trans-unit>
+      <trans-unit id="title.login">
+        <source>title.login</source>
+        <target>Zaloguj się</target>
+      </trans-unit>
+      <trans-unit id="footer.info">
+        <source>footer.info</source>
+        <target>© 2023 pgoldys</target>
+      </trans-unit>
+      <trans-unit id="action.show.github">
+        <source>action.show.github</source>
+        <target>mój github</target>
+      </trans-unit>
+      <trans-unit id="gif.info">
+        <source>gif.info</source>
+        <target>źródło GIFów: tenor.com</target>
       </trans-unit>
     </body>
   </file>

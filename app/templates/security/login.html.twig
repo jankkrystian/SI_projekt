@@ -19,15 +19,15 @@
     {% if app.user %}
     <div class="container">
         <div class="row">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">{{ 'action.logout' | trans}}</a>
 
     {% endif %}
             <div class="container">
                 <div class="row">
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
+    <h1 class="h3 mb-3 font-weight-normal">{{ 'title.login' | trans}}</h1>
+    <label for="inputEmail">{{ 'label.email' | trans}}</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
+    <label for="inputPassword">{{ 'label.password' | trans}}</label>
     <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
     <input type="hidden" name="_csrf_token"

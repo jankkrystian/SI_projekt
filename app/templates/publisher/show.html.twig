@@ -5,6 +5,8 @@
 {% endblock %}
 
 {% block body %}
+    <div class="container">
+    <div class="row">
     <h1>{{ 'title.publisher_details'|trans({'%id%': publisher.id|default('')}) }}</h1>
     {% if publisher is defined and publisher|length %}
         <dl class="dl-horizontal">
@@ -23,5 +25,7 @@
             {{ 'message.record_not_found'|trans }}
         </p>
     {% endif %}
+    </div>
+    </div>
     {%  include 'footer.html.twig' %}
 {% endblock %}

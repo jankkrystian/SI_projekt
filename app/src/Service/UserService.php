@@ -41,6 +41,16 @@ class UserService implements UserServiceInterface
      *
      * @param User $user User entity
      */
+    public function saveEmail(User $user): void
+    {
+        $this->userRepository->saveEmail($user);
+    }
+
+    /**
+     * Save user.
+     *
+     * @param User $user User entity
+     */
     public function save(User $user): void
     {
         $this->userRepository->save($user);

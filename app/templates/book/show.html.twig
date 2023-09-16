@@ -5,6 +5,8 @@
 {% endblock %}
 
 {% block body %}
+    <div class="container">
+    <div class="row">
     <h1>{{ 'title.book_details'|trans({'%id%': book.id|default('')}) }}</h1>
     {% if book is defined and book|length %}
         <dl class="dl-horizontal">
@@ -31,5 +33,7 @@
             {{ 'message.record_not_found'|trans }}
         </p>
     {% endif %}
+    </div>
+    </div>
     {%  include 'footer.html.twig' %}
 {% endblock %}
