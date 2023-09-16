@@ -22,7 +22,7 @@ class PublisherFixtures extends AbstractBaseFixtures
      */
     public function loadData(): void
     {
-        $this->createMany(10, 'publishers', function (int $i) {
+        $this->createMany(20, 'publishers', function (int $i) {
             $publisher = new Publisher();
             $publisher->setPublisherTitle($this->faker->unique()->word);
 
