@@ -61,7 +61,7 @@ class Publisher
     /**
      * Getter for title.
      *
-     * @return string|null Title
+     * @return string|null Result
      */
     public function getPublisherTitle(): ?string
     {
@@ -72,10 +72,14 @@ class Publisher
      * Setter for title.
      *
      * @param string|null $publisherTitle publisherTitle
+     *
+     * @return $this Result
      */
-    public function setPublisherTitle(?string $publisherTitle): void
+    public function setPublisherTitle(?string $publisherTitle): self
     {
         $this->publisherTitle = $publisherTitle;
+
+        return $this;
     }
 
     /**
@@ -91,7 +95,7 @@ class Publisher
      *
      * @return $this Result
      */
-    public function setSlug(string $slug): static
+    public function setSlug(string $slug): self
     {
         $this->slug = $slug;
 

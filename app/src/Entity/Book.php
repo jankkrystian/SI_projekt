@@ -96,9 +96,11 @@ class Book
      *
      * @return $this Result
      */
-    public function setTitle(string $title): void
+    public function setTitle(string $title): self
     {
         $this->title = $title;
+
+        return $this;
     }
 
     /**
@@ -114,9 +116,11 @@ class Book
      *
      * @return $this Result
      */
-    public function setGenre(?Genre $genre): void
+    public function setGenre(?Genre $genre): self
     {
         $this->genre = $genre;
+
+        return $this;
     }
 
     /**
@@ -132,7 +136,7 @@ class Book
      *
      * @return $this Result
      */
-    public function setPublisher(?Publisher $publisher): static
+    public function setPublisher(?Publisher $publisher): self
     {
         $this->publisher = $publisher;
 
@@ -152,7 +156,7 @@ class Book
      *
      * @return $this Result
      */
-    public function setCreator(?Creator $creator): static
+    public function setCreator(?Creator $creator): self
     {
         $this->creator = $creator;
 
@@ -172,7 +176,7 @@ class Book
      *
      * @return $this Result
      */
-    public function setAuthor(?User $author): static
+    public function setAuthor(?User $author): self
     {
         $this->author = $author;
 
@@ -188,11 +192,11 @@ class Book
     }
 
     /**
-     * @param int $availability Availability
+     * @param int|null $availability Availability
      *
      * @return $this Result
      */
-    public function setAvailability(?int $availability): static
+    public function setAvailability(?int $availability): self
     {
         $this->availability = $availability;
 

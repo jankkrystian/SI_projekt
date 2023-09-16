@@ -10,7 +10,7 @@ use App\Entity\User;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 
 /**
- * User service interface.
+ * Interface UserServiceInterface.
  */
 interface UserServiceInterface
 {

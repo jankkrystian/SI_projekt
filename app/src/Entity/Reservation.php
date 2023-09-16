@@ -70,7 +70,7 @@ class Reservation
      *
      * @return $this Result
      */
-    public function setEmail(string $email): static
+    public function setEmail(string $email): self
     {
         $this->email = $email;
 
@@ -90,7 +90,7 @@ class Reservation
      *
      * @return $this Result
      */
-    public function setNick(string $nick): static
+    public function setNick(string $nick): self
     {
         $this->nick = $nick;
 
@@ -106,11 +106,11 @@ class Reservation
     }
 
     /**
-     * @param string $note Note
+     * @param string|null $note Note
      *
      * @return $this Result
      */
-    public function setNote(?string $note): static
+    public function setNote(?string $note): self
     {
         $this->note = $note;
 
@@ -130,7 +130,7 @@ class Reservation
      *
      * @return $this Result
      */
-    public function setBook(?Book $book): static
+    public function setBook(?Book $book): self
     {
         $this->book = $book;
 

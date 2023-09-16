@@ -79,7 +79,7 @@ class Creator
     /**
      * Getter for nick.
      *
-     * @return string|null Nick
+     * @return string|null Result
      */
     public function getNick(): ?string
     {
@@ -90,10 +90,14 @@ class Creator
      * Setter for nick.
      *
      * @param string|null $nick Nick
+     *
+     * @return $this Result
      */
-    public function setNick(?string $nick): void
+    public function setNick(?string $nick): self
     {
         $this->nick = $nick;
+
+        return $this;
     }
 
     /**
@@ -110,10 +114,14 @@ class Creator
      * Setter for name.
      *
      * @param string|null $name Name
+     *
+     * @return $this Result
      */
-    public function setName(?string $name): void
+    public function setName(?string $name): self
     {
         $this->name = $name;
+
+        return $this;
     }
 
     /**
@@ -130,10 +138,14 @@ class Creator
      * Setter for surname.
      *
      * @param string|null $surname Surname
+     *
+     * @return $this Result
      */
-    public function setSurname(?string $surname): void
+    public function setSurname(?string $surname): self
     {
         $this->surname = $surname;
+
+        return $this;
     }
 
     /**
@@ -149,7 +161,7 @@ class Creator
      *
      * @return $this Result
      */
-    public function setSlug(string $slug): static
+    public function setSlug(string $slug): self
     {
         $this->slug = $slug;
 

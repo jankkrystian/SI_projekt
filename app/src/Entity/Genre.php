@@ -67,13 +67,15 @@ class Genre
     }
 
     /**
-     * @param string $genreTitle Genre title
+     * @param string $genreTitle genreTitle
      *
      * @return $this Result
      */
-    public function setGenreTitle(string $genreTitle): void
+    public function setGenreTitle(string $genreTitle): self
     {
         $this->genreTitle = $genreTitle;
+
+        return $this;
     }
 
     /**
@@ -89,7 +91,7 @@ class Genre
      *
      * @return $this Result
      */
-    public function setSlug(string $slug): static
+    public function setSlug(string $slug): self
     {
         $this->slug = $slug;
 
